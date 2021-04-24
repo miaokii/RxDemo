@@ -1,0 +1,30 @@
+{
+  "name": "MKSwiftRes",
+  "version": "0.1.0",
+  "summary": "A short description of MKSwiftRes.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/kangkai/MKSwiftRes",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "kangkai": "kangkai1108@sina.cn"
+  },
+  "source": {
+    "git": "https://github.com/kangkai/MKSwiftRes.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source_files": "MKSwiftRes/Classes/**/*.swift",
+  "dependencies": {
+    "SnapKit": [
+
+    ],
+    "MBProgressHUD": [
+
+    ]
+  }
+}
