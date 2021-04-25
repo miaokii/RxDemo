@@ -1,0 +1,6 @@
+module Pods_RxNotes {
+  umbrella header "Pods-RxNotes-umbrella.h"
+
+  export *
+  module * { export * }
+}

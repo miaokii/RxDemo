@@ -12,7 +12,7 @@ class HomeViewController: MKPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource = ["Simple validation", "Github Login"]
+        dataSource = ["Simple validation", "Dirver Observable", "Github Login"]
         cellType = HomeCell.self
     }
     
@@ -21,6 +21,8 @@ class HomeViewController: MKPageViewController {
         var vc: UIViewController
         if indexPath.row == 0 {
             vc = SimpleValidationController.init()
+        } else if indexPath.row == 1 {
+            vc = DirverObservableController.init()
         } else {
             vc = MKViewController()
         }

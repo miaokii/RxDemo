@@ -30,19 +30,6 @@ class SimpleValidationController: MKViewController {
         setValid()
     }
     
-    /*
-     Observabe：可监听序列，产生事件
-     Observer：响应事件
-     share(replay:)：共享源
-     
-     响应式-------------------------------------------------------------
-     | 输入密码            操作函数  密码是否有效       数据绑定 提示语是否隐藏
-     | Observable<String> ------> Observable<Bool> -----> Observer<Bool>
-     |
-     | 函数响应式编程是一种编程范式，它通过构建函数操作数据序列，对这些序列做出响应的编程方式
-     | 结合了函数式和相应式
-     |
-     */
     private func setUI() {
         let nameLabel = UILabel.init(super: view,
                                      text: "Username")
@@ -132,24 +119,6 @@ class SimpleValidationController: MKViewController {
         loginBtn.rx.tap.subscribe(onNext: {[weak self] in
             self?.showAlert()
         }).disposed(by: disposeBag)
-        
-        /*
-        // Observable(String)
-        let text = nameField.rx.text.orEmpty.asObservable()
-        //
-        let passwordValid = text
-            .map{ $0.count >= self.userNameMinLength }
-        // Observer(Bool)
-        let observer = passField.rx.isHidden
-        
-        let disposble = passwordValid
-            // 控制任务在那个线程队列执行
-            .subscribe(on: MainScheduler.instance)
-            .observe(on: MainScheduler.instance)
-            .bind(to: observer)
-        */
-        
-        
     }
     
     private func showAlert() {
