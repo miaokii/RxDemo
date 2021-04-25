@@ -60,8 +60,12 @@ class NotesCall {
             print("maybe success")
         }.disposed(by: bag)
     }
+    
+    private func anyObserver() {
+        Observers.share.anyObserver()
+    }
 
     static func Call() {
-        NotesCall.share.maybeTest()
+        Observers.share.anyObserverString()
     }
 }

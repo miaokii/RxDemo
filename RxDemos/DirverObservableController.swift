@@ -34,8 +34,7 @@ class DirverObservableController: MKPageViewController {
     }
     
     private func dirverBind() {
-        let result = searchField.rx.text.asDriver()
-    
+            
     }
 }
 

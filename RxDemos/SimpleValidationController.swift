@@ -105,15 +105,30 @@ class SimpleValidationController: MKViewController {
             .share(replay: 1)
         
         // 将passField可编辑与否与usernameValid源绑定
-        userNameValid.bind(to: passField.rx.isEnabled)
+        userNameValid
+            .bind(to: passField.rx.isEnabled)
             // 绑定的生命周期由disposeBag管理，disposeBag被释放，未清除的绑定也释放了，同ARC
             .disposed(by: disposeBag)
-        userNameValid.bind(to: nameValidLabel.rx.isHidden)
+        
+        // userNameValid.bind(to: nameValidLabel.rx.isHidden)
+        //    .disposed(by: disposeBag)
+        // 等价
+        // =====>
+        // 使用binder观察者类型
+        let usernameValidObserver = Binder.init(nameValidLabel) { (view, isHidden) in
+            view.isHidden = isHidden
+        }
+        userNameValid
+            .bind(to: usernameValidObserver)
             .disposed(by: disposeBag)
-        passwordvalid.bind(to: passValidLabel.rx.isHidden)
+        
+        
+        passwordvalid
+            .bind(to: passValidLabel.rx.isHidden)
             .disposed(by: disposeBag)
         // 输入无效不能惦记按钮
-        everythingValid.bind(to: loginBtn.rx.isEnabled)
+        everythingValid
+            .bind(to: loginBtn.rx.isEnabled)
             .disposed(by: disposeBag)
         
         loginBtn.rx.tap.subscribe(onNext: {[weak self] in
