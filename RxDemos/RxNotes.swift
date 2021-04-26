@@ -36,7 +36,6 @@ import RxCocoa
  |    对Observable使用asSingle()方法可以转换为single
  | 4、Completable
  |    另一个Observable版本，不能发出序列元素，要么只产生completed事件
- |    要么产生error事件
  |        - 不共享附加作用
  |    适用于只关心任务完成与否，不在意任务的返回值，类似Observab<Void>
  | 5、Maybe
@@ -139,6 +138,7 @@ class RxBag  {
             observer.onNext(1)
             observer.onNext(2)
             observer.onNext(3)
+            observer.onError(RxNoteError.completeError)
             observer.onCompleted()
             return Disposables.create()
         }
@@ -169,18 +169,20 @@ class RxBag  {
 
     // MARK: - Single
     private func singleObservable() -> Single<[String: Any]> {
+        // single其实是Result<Element, Error>类型
         return Single<[String: Any]>.create { (single) -> Disposable in
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                // 请求失败，产生一个error事件
                 if let err = error {
                     single(.failure(err))
                     return
                 }
-                
+                // 解析失败，产生一个error事件
                 guard let data = data, let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? [String: Any] else {
                     single(.failure(RxNoteError.cantParseJSON))
                     return
                 }
-                
+                // 解析成功，发送一个成功事件
                 single(.success(jsonObj))
             }
             task.resume()
@@ -397,7 +399,7 @@ class RxBag  {
         subject.onNext("🐎")
         subject.onNext("🐱")
         // 如果有错误事件，发出错误事件后终止
-        // subject.onError(RxNoteError.anyObserverError)
+        subject.onError(RxNoteError.anyObserverError)
         subject.onNext("🐭")
         subject.onCompleted()
     }
@@ -423,17 +425,16 @@ class RxBag  {
         
         subject.onNext("🐑")
         subject.onNext("🐎")
-        subject.onNext("🐱")
         // 如果有错误事件，发出错误事件后终止
         // subject.onError(RxNoteError.anyObserverError)
-        subject.onNext("🐭")
         subject.onCompleted()
     }
     
     // MARK: - BehaviorSubject
     private func behaviorSubject() {
         let subject = BehaviorSubject<String>.init(value: "㊗️")
-
+        
+        subject.onNext("🐶")
         // 添加订阅
         subject.subscribe { (event) in
             switch event {
@@ -548,6 +549,6 @@ extension RxBag {
     }
     
     static func Call() {
-        share.observableTest()
+        share.behaviorSubject()
     }
 }
