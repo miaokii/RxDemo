@@ -10,6 +10,7 @@ import RxSwift
 
 class HomeGithubSignViewModel: NSObject {
     var datas = Observable.just([
-        RouteModel.init(name: "MVVM Github Sign", controllerType: MVVMGithubSignController.self)
+        RouteModel.init(name: "MVVM Github Sign", controllerType: MVVMGithubSignController.self),
+        RouteModel.init(name: "Driver Github Sign", controllerType: DriverGithubSignController.self)
     ])
 }

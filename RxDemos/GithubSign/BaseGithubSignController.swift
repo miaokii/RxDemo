@@ -93,6 +93,7 @@ class BaseGithubSignController: MKViewController {
             make.left.equalTo(20)
         }
         
+        /*
         let infoLabel = UILabel.init(super: view,
                                      textColor: .text_l3,
                                      font: .systemFont(ofSize: 11),
@@ -107,5 +108,6 @@ To do this automatically, check out the corresponding `Driver` example.
             make.top.equalTo(signUpBtn.snp.bottom).offset(30)
             make.left.equalTo(40)
         }
+ */
     }
 }
