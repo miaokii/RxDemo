@@ -6,27 +6,29 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomeViewController: MKPageViewController {
 
+    var homeVM = HomeViewModel.init()
+    private let bag = DisposeBag.init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dataSource = ["Simple validation", "Dirver Observable", "Github Login"]
         cellType = HomeCell.self
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        var vc: UIViewController
-        if indexPath.row == 0 {
-            vc = SimpleValidationController.init()
-        } else if indexPath.row == 1 {
-            vc = DirverObservableController.init()
-        } else {
-            vc = MKViewController()
-        }
-        navigationController?.pushViewController(vc, animated: true)
+        
+        tableView.delegate = nil
+        tableView.dataSource = nil
+            
+        homeVM.data.bind(to: tableView.rx.items(cellIdentifier: HomeCell.reuseID)) { (_, model, cell) in
+            (cell as! HomeCell).set(model: model.name)
+        }.disposed(by: bag)
+
+        tableView.rx.modelSelected(RouteModel.self).subscribe(onNext: { model in
+            let vc = model.controllerType.init()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }).disposed(by: bag)
+        
     }
 }
 

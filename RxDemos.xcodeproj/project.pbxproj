@@ -35,8 +35,19 @@
 		B8E68BA626332EB0008C4E2B /* UIButtonEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68B9226332EB0008C4E2B /* UIButtonEx.swift */; };
 		B8E68BA926332F3C008C4E2B /* MKPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68BA826332F3C008C4E2B /* MKPageViewController.swift */; };
 		B8E68BAD263331C4008C4E2B /* SimpleValidationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68BAC263331C4008C4E2B /* SimpleValidationController.swift */; };
+		E2355C84263670D6006ADCF2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2355C83263670D6006ADCF2 /* HomeViewModel.swift */; };
+		E2355C88263671D4006ADCF2 /* GithubSignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2355C87263671D4006ADCF2 /* GithubSignController.swift */; };
+		E241EBB52636A62B002CE966 /* Wrieframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241EBB42636A62B002CE966 /* Wrieframe.swift */; };
+		E241EBC22636AB7A002CE966 /* GithubDefaultAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241EBC12636AB7A002CE966 /* GithubDefaultAPI.swift */; };
+		E241EBCC2636AD02002CE966 /* GithubDefaultValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241EBCB2636AD02002CE966 /* GithubDefaultValidationService.swift */; };
+		E26D94AE263685A4007517CA /* GithubSignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D94AD263685A4007517CA /* GithubSignViewModel.swift */; };
+		E26D94B126368774007517CA /* MVVMSimpleValidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D94B026368774007517CA /* MVVMSimpleValidController.swift */; };
+		E26D94B426368BB0007517CA /* MVVMGithubSignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D94B326368BB0007517CA /* MVVMGithubSignController.swift */; };
+		E26D94BB26368EA8007517CA /* SimpleValidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D94BA26368EA8007517CA /* SimpleValidController.swift */; };
+		E26D94BF26368FF4007517CA /* BaseGithubSignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D94BE26368FF4007517CA /* BaseGithubSignController.swift */; };
+		E26D94C3263691F2007517CA /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D94C2263691F2007517CA /* Protocols.swift */; };
+		E26D94C826369B31007517CA /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D94C726369B31007517CA /* ActivityIndicator.swift */; };
 		E29486862635727E000DE498 /* RxNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29486822635679B000DE498 /* RxNotes.swift */; };
-		E294868B263573A2000DE498 /* NotesCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E294868A263573A2000DE498 /* NotesCall.swift */; };
 		E2A9FE7E26357604009A3796 /* DirverObservableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FE7D26357604009A3796 /* DirverObservableController.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,8 +86,19 @@
 		B8E68B9226332EB0008C4E2B /* UIButtonEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonEx.swift; sourceTree = "<group>"; };
 		B8E68BA826332F3C008C4E2B /* MKPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPageViewController.swift; sourceTree = "<group>"; };
 		B8E68BAC263331C4008C4E2B /* SimpleValidationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValidationController.swift; sourceTree = "<group>"; };
+		E2355C83263670D6006ADCF2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E2355C87263671D4006ADCF2 /* GithubSignController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSignController.swift; sourceTree = "<group>"; };
+		E241EBB42636A62B002CE966 /* Wrieframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Wrieframe.swift; path = ../Pods/Wrieframe.swift; sourceTree = "<group>"; };
+		E241EBC12636AB7A002CE966 /* GithubDefaultAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubDefaultAPI.swift; sourceTree = "<group>"; };
+		E241EBCB2636AD02002CE966 /* GithubDefaultValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubDefaultValidationService.swift; sourceTree = "<group>"; };
+		E26D94AD263685A4007517CA /* GithubSignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSignViewModel.swift; sourceTree = "<group>"; };
+		E26D94B026368774007517CA /* MVVMSimpleValidController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSimpleValidController.swift; sourceTree = "<group>"; };
+		E26D94B326368BB0007517CA /* MVVMGithubSignController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMGithubSignController.swift; sourceTree = "<group>"; };
+		E26D94BA26368EA8007517CA /* SimpleValidController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValidController.swift; sourceTree = "<group>"; };
+		E26D94BE26368FF4007517CA /* BaseGithubSignController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGithubSignController.swift; sourceTree = "<group>"; };
+		E26D94C2263691F2007517CA /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		E26D94C726369B31007517CA /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		E29486822635679B000DE498 /* RxNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNotes.swift; sourceTree = "<group>"; };
-		E294868A263573A2000DE498 /* NotesCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCall.swift; sourceTree = "<group>"; };
 		E2A9FE7D26357604009A3796 /* DirverObservableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirverObservableController.swift; sourceTree = "<group>"; };
 		ED5D810EBD22F5900F823458 /* Pods-RxNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxNotes.release.xcconfig"; path = "Target Support Files/Pods-RxNotes/Pods-RxNotes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,13 +147,14 @@
 		B8E68B1B2633273A008C4E2B /* RxDemos */ = {
 			isa = PBXGroup;
 			children = (
+				E26D94C626369B1D007517CA /* Services */,
 				B8E68B7A26332E60008C4E2B /* QuickUI */,
 				E29486822635679B000DE498 /* RxNotes.swift */,
-				E294868A263573A2000DE498 /* NotesCall.swift */,
 				B8E68B1C2633273A008C4E2B /* AppDelegate.swift */,
 				B8E68B1E2633273A008C4E2B /* SceneDelegate.swift */,
-				B8E68B202633273A008C4E2B /* ViewController.swift */,
-				B8E68BAC263331C4008C4E2B /* SimpleValidationController.swift */,
+				E2355C82263670BB006ADCF2 /* Home */,
+				E26D94B826368E65007517CA /* Simple Validatoin */,
+				E2355C86263671AF006ADCF2 /* GithubSign */,
 				E2A9FE7D26357604009A3796 /* DirverObservableController.swift */,
 				B8E68B222633273A008C4E2B /* Main.storyboard */,
 				B8E68B252633273B008C4E2B /* Assets.xcassets */,
@@ -198,6 +221,48 @@
 				B8E68B9226332EB0008C4E2B /* UIButtonEx.swift */,
 			);
 			path = Ex;
+			sourceTree = "<group>";
+		};
+		E2355C82263670BB006ADCF2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B8E68B202633273A008C4E2B /* ViewController.swift */,
+				E2355C83263670D6006ADCF2 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E2355C86263671AF006ADCF2 /* GithubSign */ = {
+			isa = PBXGroup;
+			children = (
+				E26D94AD263685A4007517CA /* GithubSignViewModel.swift */,
+				E2355C87263671D4006ADCF2 /* GithubSignController.swift */,
+				E26D94C2263691F2007517CA /* Protocols.swift */,
+				E241EBC12636AB7A002CE966 /* GithubDefaultAPI.swift */,
+				E241EBCB2636AD02002CE966 /* GithubDefaultValidationService.swift */,
+				E26D94BE26368FF4007517CA /* BaseGithubSignController.swift */,
+				E26D94B326368BB0007517CA /* MVVMGithubSignController.swift */,
+			);
+			path = GithubSign;
+			sourceTree = "<group>";
+		};
+		E26D94B826368E65007517CA /* Simple Validatoin */ = {
+			isa = PBXGroup;
+			children = (
+				E26D94BA26368EA8007517CA /* SimpleValidController.swift */,
+				B8E68BAC263331C4008C4E2B /* SimpleValidationController.swift */,
+				E26D94B026368774007517CA /* MVVMSimpleValidController.swift */,
+			);
+			path = "Simple Validatoin";
+			sourceTree = "<group>";
+		};
+		E26D94C626369B1D007517CA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E26D94C726369B31007517CA /* ActivityIndicator.swift */,
+				E241EBB42636A62B002CE966 /* Wrieframe.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		EAA15D727796E745E42B28E3 /* Frameworks */ = {
@@ -324,32 +389,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				E29486862635727E000DE498 /* RxNotes.swift in Sources */,
+				E26D94B426368BB0007517CA /* MVVMGithubSignController.swift in Sources */,
 				B8E68BAD263331C4008C4E2B /* SimpleValidationController.swift in Sources */,
 				B8E68B212633273A008C4E2B /* ViewController.swift in Sources */,
+				E241EBB52636A62B002CE966 /* Wrieframe.swift in Sources */,
 				B8E68B1D2633273A008C4E2B /* AppDelegate.swift in Sources */,
 				B8E68BA626332EB0008C4E2B /* UIButtonEx.swift in Sources */,
 				B8E68B9826332EB0008C4E2B /* MKViewController.swift in Sources */,
 				B8E68B9726332EB0008C4E2B /* MKView.swift in Sources */,
 				B8E68B9E26332EB0008C4E2B /* UIScrollViewEx.swift in Sources */,
 				B8E68B9626332EB0008C4E2B /* MKScrollController.swift in Sources */,
-				E294868B263573A2000DE498 /* NotesCall.swift in Sources */,
 				B8E68BA526332EB0008C4E2B /* CellEx.swift in Sources */,
+				E26D94C826369B31007517CA /* ActivityIndicator.swift in Sources */,
+				E2355C84263670D6006ADCF2 /* HomeViewModel.swift in Sources */,
 				B8E68B9F26332EB0008C4E2B /* QuickInitEx.swift in Sources */,
 				B8E68BA126332EB0008C4E2B /* DateEx.swift in Sources */,
 				B8E68B9426332EB0008C4E2B /* Layout.swift in Sources */,
+				E26D94C3263691F2007517CA /* Protocols.swift in Sources */,
 				B8E68BA926332F3C008C4E2B /* MKPageViewController.swift in Sources */,
 				B8E68B9526332EB0008C4E2B /* MKAuthCodeView.swift in Sources */,
 				B8E68B9D26332EB0008C4E2B /* MKTimer.swift in Sources */,
 				B8E68B1F2633273A008C4E2B /* SceneDelegate.swift in Sources */,
+				E26D94AE263685A4007517CA /* GithubSignViewModel.swift in Sources */,
+				E26D94BB26368EA8007517CA /* SimpleValidController.swift in Sources */,
 				B8E68BA226332EB0008C4E2B /* UIColorEx.swift in Sources */,
 				B8E68BA426332EB0008C4E2B /* StringEx.swift in Sources */,
 				B8E68B9326332EB0008C4E2B /* Sandbox.swift in Sources */,
+				E241EBCC2636AD02002CE966 /* GithubDefaultValidationService.swift in Sources */,
+				E2355C88263671D4006ADCF2 /* GithubSignController.swift in Sources */,
 				B8E68B9926332EB0008C4E2B /* MKPickerController.swift in Sources */,
+				E26D94BF26368FF4007517CA /* BaseGithubSignController.swift in Sources */,
 				B8E68B9B26332EB0008C4E2B /* MKBasePopController.swift in Sources */,
 				B8E68B9A26332EB0008C4E2B /* MKPopViewController.swift in Sources */,
 				B8E68BA026332EB0008C4E2B /* UIViewEx.swift in Sources */,
 				B8E68BA326332EB0008C4E2B /* UIImageEx.swift in Sources */,
+				E26D94B126368774007517CA /* MVVMSimpleValidController.swift in Sources */,
 				E2A9FE7E26357604009A3796 /* DirverObservableController.swift in Sources */,
+				E241EBC22636AB7A002CE966 /* GithubDefaultAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
