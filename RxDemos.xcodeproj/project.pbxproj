@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		90B7B3042742500CF2BC68FC /* Pods_RxDemos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71EF8CC10813A69396D680EC /* Pods_RxDemos.framework */; };
+		B80AC71D2638596200D756C3 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80AC71C2638596200D756C3 /* ImagePickerController.swift */; };
 		B84F4C242637191D00C66818 /* DriverGithubSignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4C232637191D00C66818 /* DriverGithubSignController.swift */; };
 		B8E68B1D2633273A008C4E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68B1C2633273A008C4E2B /* AppDelegate.swift */; };
 		B8E68B1F2633273A008C4E2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68B1E2633273A008C4E2B /* SceneDelegate.swift */; };
@@ -58,6 +59,7 @@
 		42F4DE49EA156CCF3EFF2683 /* Pods-RxDemos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDemos.release.xcconfig"; path = "Target Support Files/Pods-RxDemos/Pods-RxDemos.release.xcconfig"; sourceTree = "<group>"; };
 		71EF8CC10813A69396D680EC /* Pods_RxDemos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDemos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A57BE4E742758D51A4F6F12 /* Pods-RxNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxNotes.debug.xcconfig"; path = "Target Support Files/Pods-RxNotes/Pods-RxNotes.debug.xcconfig"; sourceTree = "<group>"; };
+		B80AC71C2638596200D756C3 /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		B84F4C232637191D00C66818 /* DriverGithubSignController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverGithubSignController.swift; sourceTree = "<group>"; };
 		B8E68B192633273A008C4E2B /* RxDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E68B1C2633273A008C4E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				E26D94B826368E65007517CA /* Simple Validatoin */,
 				E2355C86263671AF006ADCF2 /* GithubSign */,
 				E2A9FE7D26357604009A3796 /* DirverObservableController.swift */,
+				B80AC71C2638596200D756C3 /* ImagePickerController.swift */,
 				B8E68B222633273A008C4E2B /* Main.storyboard */,
 				B8E68B252633273B008C4E2B /* Assets.xcassets */,
 				B8E68B272633273B008C4E2B /* LaunchScreen.storyboard */,
@@ -418,6 +421,7 @@
 				E26D94BB26368EA8007517CA /* SimpleValidController.swift in Sources */,
 				B8E68BA226332EB0008C4E2B /* UIColorEx.swift in Sources */,
 				B8E68BA426332EB0008C4E2B /* StringEx.swift in Sources */,
+				B80AC71D2638596200D756C3 /* ImagePickerController.swift in Sources */,
 				B8E68B9326332EB0008C4E2B /* Sandbox.swift in Sources */,
 				E241EBCC2636AD02002CE966 /* GithubDefaultValidationService.swift in Sources */,
 				E2355C88263671D4006ADCF2 /* GithubSignController.swift in Sources */,

@@ -12,6 +12,7 @@ struct HomeViewModel {
     let data = Observable.just([
         RouteModel.init(name: "Simple Validation", controllerType: SimpleValidController.self),
         RouteModel.init(name: "Github sign", controllerType: GithubSignController.self),
+        RouteModel.init(name: "ImagePicker", controllerType: ImagePickerController.self),
         RouteModel.init(name: "Github search", controllerType: DirverObservableController.self),
     ])
 }
