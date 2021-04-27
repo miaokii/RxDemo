@@ -494,6 +494,40 @@ class RxBag  {
     }
 }
 
+// MARK: - 创建序列
+extension RxBag {
+    func create() {
+        Observable<Int>.create { (observer) -> Disposable in
+            observer.onNext(1)
+            observer.onNext(2)
+            observer.onCompleted()
+            return Disposables.create()
+        }
+        .subscribe(onNext: { print($0) })
+        .disposed(by: bag)
+    }
+}
+
+// MARK: - 转换序列
+extension RxBag {
+    // MARK: - map
+    func map() {
+        Observable.of(1, 2, 3)
+            .map{ $0 * 10 }
+            .subscribe(onNext: { print($0) })
+            .disposed(by: bag)
+    }
+    // MARK: - flatMap
+    func flatMap() {
+        let numObservable1 = Observable.of(1, 2, 3, 4)
+        let numObservable2 = Observable.of(10, 11, 12, 13)
+        Observable.of(numObservable1, numObservable2)
+            .flatMapLatest{ $0.map{$0} }
+            .subscribe(onNext: { print($0) })
+            .disposed(by: bag)
+    }
+}
+
 // MARK: - 调用
 extension RxBag {
 
@@ -549,6 +583,6 @@ extension RxBag {
     }
     
     static func Call() {
-        share.behaviorSubject()
+        share.flatMap()
     }
 }
