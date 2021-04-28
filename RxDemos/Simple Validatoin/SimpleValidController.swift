@@ -8,8 +8,8 @@
 import UIKit
 import RxSwift
 
-class SimpleValidController: MKViewController {
-    private let bag = DisposeBag()
+class SimpleValidController: RxBagController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -8,45 +8,35 @@
 import UIKit
 import RxSwift
 
-class HomeViewController: MKPageViewController {
+struct HomeViewModel {
+    let data = Observable.just([
+        RouteModel.init(name: "Simple Validation", controllerType: SimpleValidController.self),
+        RouteModel.init(name: "Github sign", controllerType: GithubSignController.self),
+        RouteModel.init(name: "RxFeedback", controllerType: FeedBackController.self),
+        RouteModel.init(name: "Github search", controllerType: DirverObservableController.self),
+    ])
+}
+
+struct RouteModel {
+    var name = ""
+    var controllerType = MKViewController.self
+}
+
+class HomeViewController: RxBagController{
 
     var homeVM = HomeViewModel.init()
-    private let bag = DisposeBag.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cellType = HomeCell.self
-        
-        tableView.delegate = nil
-        tableView.dataSource = nil
             
-        homeVM.data.bind(to: tableView.rx.items(cellIdentifier: HomeCell.reuseID)) { (_, model, cell) in
-            (cell as! HomeCell).set(model: model.name)
+        homeVM.data.bind(to: tableView.rx.items(cellIdentifier: UITableViewCell.reuseID)) { (_, model, cell) in
+            cell.textLabel?.text = model.name
         }.disposed(by: bag)
 
         tableView.rx.modelSelected(RouteModel.self).subscribe(onNext: { model in
             let vc = model.controllerType.init()
             self.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: bag)
-        
-    }
-}
-
-fileprivate class HomeCell: MKTableCell {
-    private var nameLabel: UILabel!
-    override func setup() {
-        accessoryType = .disclosureIndicator
-        nameLabel = UILabel.init(super: contentView,
-                                 font: .systemFont(ofSize: 17))
-        nameLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(20)
-            make.top.equalTo(15)
-            make.bottom.equalTo(-15)
-        }
-    }
     
-    override func set(model: Any) {
-        guard let item = model as? String else { return }
-        nameLabel.text = item
     }
 }

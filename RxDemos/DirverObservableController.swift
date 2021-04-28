@@ -9,21 +9,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class DirverObservableController: MKPageViewController {
+class DirverObservableController: RxBagController {
 
     private var searchField: UITextField!
     private var countLabel: UILabel!
-    
-    private var bag = DisposeBag()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUI()
-        dirverBind()
         
-    }
-    
-    private func setUI() {
+    override func setUI() {
         let searchView = UIView.init(super: nil,
                                      backgroundColor: .view_l1)
         searchView.frame = .init(x: 0, y: 0, width: view.width, height: 80)
@@ -39,7 +30,6 @@ class DirverObservableController: MKPageViewController {
                                   font: .systemFont(ofSize: 12))
         countLabel.frame = .init(x: 20, y: 50, width: searchField.width, height: 20)
         
-        cellType = GithubRepoCell.self
         tableView.tableHeaderView = searchView
         tableView.delegate = nil
         tableView.dataSource = nil
@@ -52,7 +42,7 @@ class DirverObservableController: MKPageViewController {
         return Observable.just(arr)
     }
     
-    private func dirverBind() {
+    override func setBind() {
         let results = searchField.rx.text.orEmpty.asDriver()
             // 节流，0.3s内重复产生的序列会覆盖上次产生的序列
             .throttle(.milliseconds(300))
@@ -67,7 +57,7 @@ class DirverObservableController: MKPageViewController {
             .disposed(by: bag)
         
         results
-            .drive(tableView.rx.items(cellIdentifier: GithubRepoCell.reuseID))
+            .drive(tableView.rx.items(cellIdentifier: UITableViewCell.reuseID))
             { _, value, cell in
                 cell.textLabel?.text = value
             }

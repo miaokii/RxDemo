@@ -8,5 +8,6 @@ pod 'RxSwift'
 pod 'RxCocoa'
 pod 'MBProgressHUD'
 pod 'SnapKit'
+pod 'RxFeedback'
 
 end

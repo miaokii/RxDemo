@@ -8,18 +8,19 @@
 import UIKit
 import RxSwift
 
-class GithubSignController: MKPageViewController {
+fileprivate struct HomeGithubSignViewModel {
+    var datas = Observable.just([
+        RouteModel.init(name: "MVVM Github Sign", controllerType: MVVMGithubSignController.self)
+    ])
+}
+
+class GithubSignController: RxBagController {
 
     private var sourceVM = HomeGithubSignViewModel.init()
-    private let bag = DisposeBag.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = nil
-        tableView.delegate = self
-        
-        tableView.register(cellType: UITableViewCell.self)
         sourceVM.datas
             .bind(to: tableView.rx.items(cellIdentifier: UITableViewCell.reuseID)) { (_, model, cell) in
                 cell.textLabel?.text = model.name

@@ -9,14 +9,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ImagePickerController: MKViewController {
+class ImagePickerController: RxBagController {
 
     private var imageView:UIImageView!
     private var cameraBtn:UIButton!
     private var galleryBtn: UIButton!
     private var cropBtn: UIButton!
-    
-    private var bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +24,7 @@ class ImagePickerController: MKViewController {
         setBind()
     }
 
-    func setUI() {
+    override func setUI() {
         imageView = UIImageView.init(super: view,
                                      backgroundColor: .table_bg,
                                      contentMode: .scaleAspectFill)
@@ -59,7 +57,7 @@ class ImagePickerController: MKViewController {
         }
     }
     
-    func setBind() {
+    override func setBind() {
         // 不能调用相机时，拍照不可选
         cameraBtn.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         

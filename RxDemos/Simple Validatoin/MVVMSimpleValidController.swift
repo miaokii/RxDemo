@@ -37,7 +37,7 @@ fileprivate struct SimpleValidViewModel {
     }
 }
 
-class MVVMSimpleValidController: MKViewController {
+class MVVMSimpleValidController: RxBagController {
 
     private var nameField: UITextField!
     private var passField: UITextField!
@@ -48,16 +48,13 @@ class MVVMSimpleValidController: MKViewController {
     
     private var viewModel: SimpleValidViewModel!
     
-    // 绑定的生命周期管理器
-    private var disposeBag = DisposeBag()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         bindValid()
     }
     
-    private func setUI() {
+    override func setUI() {
         let nameLabel = UILabel.init(super: view,
                                      text: "Username")
         nameLabel.snp.makeConstraints { (make) in
@@ -120,25 +117,25 @@ class MVVMSimpleValidController: MKViewController {
                                               pass: passObservable)
         viewModel.nameValid
             .bind(to: nameValidLabel.rx.isHidden)
-            .disposed(by: disposeBag)
+            .disposed(by: bag)
         
         viewModel.nameValid
             .bind(to: passField.rx.isEnabled)
-            .disposed(by: disposeBag)
+            .disposed(by: bag)
         
         viewModel.passValid
             .bind(to: passValidLabel.rx.isHidden)
-            .disposed(by: disposeBag)
+            .disposed(by: bag)
         
         viewModel.entryValid
             .bind(to: loginBtn.rx.isEnabled)
-            .disposed(by: disposeBag)
+            .disposed(by: bag)
         
         loginBtn.rx.tap
             .subscribe(onNext: {
                 self.showAlert()
             })
-            .disposed(by: disposeBag)
+            .disposed(by: bag)
         
     }
     

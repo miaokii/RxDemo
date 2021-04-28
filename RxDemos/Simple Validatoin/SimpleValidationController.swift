@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SimpleValidationController: MKViewController {
+class SimpleValidationController: RxBagController {
 
     private var nameField: UITextField!
     private var passField: UITextField!
@@ -21,16 +21,13 @@ class SimpleValidationController: MKViewController {
     private var userNameMinLength = 4
     private var passWordMinLength = 4
     
-    // 绑定的生命周期管理器
-    private var disposeBag = DisposeBag()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setValid()
     }
     
-    private func setUI() {
+    override func setUI() {
         let nameLabel = UILabel.init(super: view,
                                      text: "Username")
         nameLabel.snp.makeConstraints { (make) in
@@ -108,10 +105,10 @@ class SimpleValidationController: MKViewController {
         userNameValid
             .bind(to: passField.rx.isEnabled)
             // 绑定的生命周期由disposeBag管理，disposeBag被释放，未清除的绑定也释放了，同ARC
-            .disposed(by: disposeBag)
+            .disposed(by: bag)
         
         // userNameValid.bind(to: nameValidLabel.rx.isHidden)
-        //    .disposed(by: disposeBag)
+        //    .disposed(by: bag)
         // 等价
         // =====>
         // 使用binder观察者类型
@@ -120,20 +117,20 @@ class SimpleValidationController: MKViewController {
         }
         userNameValid
             .bind(to: usernameValidObserver)
-            .disposed(by: disposeBag)
+            .disposed(by: bag)
         
         
         passwordvalid
             .bind(to: passValidLabel.rx.isHidden)
-            .disposed(by: disposeBag)
+            .disposed(by: bag)
         // 输入无效不能惦记按钮
         everythingValid
             .bind(to: loginBtn.rx.isEnabled)
-            .disposed(by: disposeBag)
+            .disposed(by: bag)
         
         loginBtn.rx.tap.subscribe(onNext: {[weak self] in
             self?.showAlert()
-        }).disposed(by: disposeBag)
+        }).disposed(by: bag)
     }
     
     private func showAlert() {

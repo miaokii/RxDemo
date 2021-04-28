@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class BaseGithubSignController: MKViewController {
+class BaseGithubSignController: RxBagController {
 
     var nameField: UITextField!
     var passField: UITextField!
@@ -21,15 +21,7 @@ class BaseGithubSignController: MKViewController {
     var signUpBtn: UIButton!
     var indicator: UIActivityIndicatorView!
     
-    var bag = DisposeBag()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setUI()
-    }
-    
-    func setUI() {
+    override func setUI() {
     
         nameField = UITextField.init(super: view,
                                      placeHolder: "Enter your name",
@@ -93,7 +85,6 @@ class BaseGithubSignController: MKViewController {
             make.left.equalTo(20)
         }
         
-        /*
         let infoLabel = UILabel.init(super: view,
                                      textColor: .text_l3,
                                      font: .systemFont(ofSize: 11),
@@ -108,6 +99,5 @@ To do this automatically, check out the corresponding `Driver` example.
             make.top.equalTo(signUpBtn.snp.bottom).offset(30)
             make.left.equalTo(40)
         }
- */
     }
 }
