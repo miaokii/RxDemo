@@ -11,7 +11,6 @@
 		B80AC71D2638596200D756C3 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80AC71C2638596200D756C3 /* ImagePickerController.swift */; };
 		B84F4C242637191D00C66818 /* DriverGithubSignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4C232637191D00C66818 /* DriverGithubSignController.swift */; };
 		B8E68B1D2633273A008C4E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68B1C2633273A008C4E2B /* AppDelegate.swift */; };
-		B8E68B1F2633273A008C4E2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68B1E2633273A008C4E2B /* SceneDelegate.swift */; };
 		B8E68B242633273A008C4E2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E68B222633273A008C4E2B /* Main.storyboard */; };
 		B8E68B262633273B008C4E2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8E68B252633273B008C4E2B /* Assets.xcassets */; };
 		B8E68B292633273B008C4E2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E68B272633273B008C4E2B /* LaunchScreen.storyboard */; };
@@ -64,7 +63,6 @@
 		B84F4C232637191D00C66818 /* DriverGithubSignController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverGithubSignController.swift; sourceTree = "<group>"; };
 		B8E68B192633273A008C4E2B /* RxDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E68B1C2633273A008C4E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B8E68B1E2633273A008C4E2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B8E68B232633273A008C4E2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8E68B252633273B008C4E2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8E68B282633273B008C4E2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -153,11 +151,10 @@
 		B8E68B1B2633273A008C4E2B /* RxDemos */ = {
 			isa = PBXGroup;
 			children = (
-				E26D94C626369B1D007517CA /* Services */,
-				B8E68B7A26332E60008C4E2B /* QuickUI */,
 				E29486822635679B000DE498 /* RxNotes.swift */,
 				B8E68B1C2633273A008C4E2B /* AppDelegate.swift */,
-				B8E68B1E2633273A008C4E2B /* SceneDelegate.swift */,
+				E26D94C626369B1D007517CA /* Services */,
+				B8E68B7A26332E60008C4E2B /* QuickUI */,
 				E2355C82263670BB006ADCF2 /* Home */,
 				E26D94B826368E65007517CA /* Simple Validatoin */,
 				E2355C86263671AF006ADCF2 /* GithubSign */,
@@ -428,7 +425,6 @@
 				B8E68BA926332F3C008C4E2B /* MKPageViewController.swift in Sources */,
 				B8E68B9526332EB0008C4E2B /* MKAuthCodeView.swift in Sources */,
 				B8E68B9D26332EB0008C4E2B /* MKTimer.swift in Sources */,
-				B8E68B1F2633273A008C4E2B /* SceneDelegate.swift in Sources */,
 				B8E68BA226332EB0008C4E2B /* UIColorEx.swift in Sources */,
 				E253B2402638EDCD00E4D3E9 /* SimpleValidationController.swift in Sources */,
 				B8E68BA426332EB0008C4E2B /* StringEx.swift in Sources */,

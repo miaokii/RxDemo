@@ -65,7 +65,8 @@ class ImagePickerController: RxBagController {
             .flatMapLatest { [weak self] _ in
                 return UIImagePickerController.rx
                     .createWithParent(self) { picker in
-                        
+                        picker.sourceType = .camera
+                        picker.allowsEditing = false
                     }
                     .flatMap { $0.rx.didFinishPickingMediaWithInfo }
                     .take(1)
