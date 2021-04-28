@@ -519,10 +519,46 @@ extension RxBag {
     }
     // MARK: - flatMap
     func flatMap() {
-        let numObservable1 = Observable.of(1, 2, 3, 4)
-        let numObservable2 = Observable.of(10, 11, 12, 13)
-        Observable.of(numObservable1, numObservable2)
-            .flatMapLatest{ $0.map{$0} }
+        let streamA = Observable.of(10, 20, 30)
+        let streamB: ((Int) -> Observable<Int>) = { n in
+            let d = Observable.of(n+1, n+2, n+3)
+            print("(\(n))")
+            return d
+        }
+        
+        streamA
+            .flatMap{ streamB($0) }
+            .subscribe(onNext: { print($0) })
+            .disposed(by: bag)
+    }
+    
+    // MARK: - flatMapLatest
+    func flatMapLatest() {
+        let stream1 = Observable.of(1, 2, 3)
+        let stream2 = Observable.of(4, 5, 6)
+        Observable.of(stream1, stream2)
+            .flatMapLatest{ $0 }
+            .subscribe(onNext: { print($0) })
+            .disposed(by: bag)
+    }
+    
+    // MARK: - flatMapFirst
+    func flatMapFirst() {
+        let stream1 = Observable.of(1, 2, 3)
+        let stream2 = Observable.of(4, 5, 6)
+        Observable.of(stream1, stream2)
+            .flatMapFirst{ $0 }
+            .subscribe(onNext: { print($0) })
+            .disposed(by: bag)
+    }
+}
+
+// MARK: - 过滤序列
+extension RxBag {
+    // MARK: - take
+    func take() {
+        Observable.of(1, 2, 3, 4)
+            .take(2)
             .subscribe(onNext: { print($0) })
             .disposed(by: bag)
     }
@@ -583,6 +619,6 @@ extension RxBag {
     }
     
     static func Call() {
-        share.flatMap()
+        share.take()
     }
 }

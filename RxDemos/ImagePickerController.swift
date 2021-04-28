@@ -62,18 +62,23 @@ class ImagePickerController: RxBagController {
         cameraBtn.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
         cameraBtn.rx.tap
+            // 只保留最后一次点击事件
             .flatMapLatest { [weak self] _ in
+                // 返回选择照片结果的序列，类型是Observable<[String: AnyObject]>
                 return UIImagePickerController.rx
                     .createWithParent(self) { picker in
                         picker.sourceType = .camera
                         picker.allowsEditing = false
                     }
                     .flatMap { $0.rx.didFinishPickingMediaWithInfo }
+                    // 仅仅从序列开始发送1个元素，忽略后面的元素
                     .take(1)
             }
+            // 转换为图片
             .map{ info in
                 return info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage
             }
+            // 绑定到imageView
             .bind(to: imageView.rx.image)
             .disposed(by: bag)
         
