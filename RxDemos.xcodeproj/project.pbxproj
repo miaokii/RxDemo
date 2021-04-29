@@ -48,6 +48,11 @@
 		E253B2512638EE4400E4D3E9 /* CountNumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B24F2638EE4400E4D3E9 /* CountNumController.swift */; };
 		E253B2522638EE4400E4D3E9 /* FeedBackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B2502638EE4400E4D3E9 /* FeedBackController.swift */; };
 		E253B2542638EE6500E4D3E9 /* Wrieframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B2532638EE6500E4D3E9 /* Wrieframe.swift */; };
+		E262998F263A56FA006837E6 /* ImagePickerContoller+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E262998E263A56FA006837E6 /* ImagePickerContoller+Reactive.swift */; };
+		E2629991263A5884006837E6 /* RxProxyRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2629990263A5884006837E6 /* RxProxyRegister.swift */; };
+		E2629996263A78AA006837E6 /* APIWrapperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2629994263A78AA006837E6 /* APIWrapperController.swift */; };
+		E2629997263A78AA006837E6 /* APIWrapperController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2629995263A78AA006837E6 /* APIWrapperController.xib */; };
+		E26299A1263A8008006837E6 /* BothwayOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26299A0263A8008006837E6 /* BothwayOperator.swift */; };
 		E26D94C826369B31007517CA /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D94C726369B31007517CA /* ActivityIndicator.swift */; };
 		E29486862635727E000DE498 /* RxNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29486822635679B000DE498 /* RxNotes.swift */; };
 		E2A9FE7E26357604009A3796 /* DirverObservableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FE7D26357604009A3796 /* DirverObservableController.swift */; };
@@ -101,6 +106,11 @@
 		E253B24F2638EE4400E4D3E9 /* CountNumController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountNumController.swift; sourceTree = "<group>"; };
 		E253B2502638EE4400E4D3E9 /* FeedBackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedBackController.swift; sourceTree = "<group>"; };
 		E253B2532638EE6500E4D3E9 /* Wrieframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wrieframe.swift; sourceTree = "<group>"; };
+		E262998E263A56FA006837E6 /* ImagePickerContoller+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImagePickerContoller+Reactive.swift"; sourceTree = "<group>"; };
+		E2629990263A5884006837E6 /* RxProxyRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxProxyRegister.swift; sourceTree = "<group>"; };
+		E2629994263A78AA006837E6 /* APIWrapperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWrapperController.swift; sourceTree = "<group>"; };
+		E2629995263A78AA006837E6 /* APIWrapperController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APIWrapperController.xib; sourceTree = "<group>"; };
+		E26299A0263A8008006837E6 /* BothwayOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BothwayOperator.swift; sourceTree = "<group>"; };
 		E26D94C726369B31007517CA /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		E29486822635679B000DE498 /* RxNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNotes.swift; sourceTree = "<group>"; };
 		E2A9FE7D26357604009A3796 /* DirverObservableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirverObservableController.swift; sourceTree = "<group>"; };
@@ -153,17 +163,19 @@
 			children = (
 				E29486822635679B000DE498 /* RxNotes.swift */,
 				B8E68B1C2633273A008C4E2B /* AppDelegate.swift */,
+				E2629990263A5884006837E6 /* RxProxyRegister.swift */,
 				E26D94C626369B1D007517CA /* Services */,
 				B8E68B7A26332E60008C4E2B /* QuickUI */,
 				E2355C82263670BB006ADCF2 /* Home */,
 				E26D94B826368E65007517CA /* Simple Validatoin */,
 				E2355C86263671AF006ADCF2 /* GithubSign */,
-				E2A9FE7D26357604009A3796 /* DirverObservableController.swift */,
 				E253B24E2638EE4400E4D3E9 /* RxFeedback */,
-				B80AC71C2638596200D756C3 /* ImagePickerController.swift */,
-				B8E68B222633273A008C4E2B /* Main.storyboard */,
+				E262998D263A56C9006837E6 /* ImagePicker */,
+				E262999F263A7E14006837E6 /* APIWrapper */,
 				B8E68B252633273B008C4E2B /* Assets.xcassets */,
+				E2A9FE7D26357604009A3796 /* DirverObservableController.swift */,
 				B8E68B272633273B008C4E2B /* LaunchScreen.storyboard */,
+				B8E68B222633273A008C4E2B /* Main.storyboard */,
 				B8E68B2A2633273B008C4E2B /* Info.plist */,
 			);
 			path = RxDemos;
@@ -260,6 +272,24 @@
 			path = RxFeedback;
 			sourceTree = "<group>";
 		};
+		E262998D263A56C9006837E6 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				B80AC71C2638596200D756C3 /* ImagePickerController.swift */,
+				E262998E263A56FA006837E6 /* ImagePickerContoller+Reactive.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		E262999F263A7E14006837E6 /* APIWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				E2629994263A78AA006837E6 /* APIWrapperController.swift */,
+				E2629995263A78AA006837E6 /* APIWrapperController.xib */,
+			);
+			path = APIWrapper;
+			sourceTree = "<group>";
+		};
 		E26D94B826368E65007517CA /* Simple Validatoin */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				E26D94C726369B31007517CA /* ActivityIndicator.swift */,
+				E26299A0263A8008006837E6 /* BothwayOperator.swift */,
 				E253B2532638EE6500E4D3E9 /* Wrieframe.swift */,
 			);
 			name = Services;
@@ -347,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2629997263A78AA006837E6 /* APIWrapperController.xib in Resources */,
 				B8E68B292633273B008C4E2B /* LaunchScreen.storyboard in Resources */,
 				B8E68B262633273B008C4E2B /* Assets.xcassets in Resources */,
 				B8E68B242633273A008C4E2B /* Main.storyboard in Resources */,
@@ -413,6 +445,7 @@
 				B8E68B9E26332EB0008C4E2B /* UIScrollViewEx.swift in Sources */,
 				E253B24C2638EE2800E4D3E9 /* GithubSignController.swift in Sources */,
 				B8E68B9626332EB0008C4E2B /* MKScrollController.swift in Sources */,
+				E2629991263A5884006837E6 /* RxProxyRegister.swift in Sources */,
 				E253B2542638EE6500E4D3E9 /* Wrieframe.swift in Sources */,
 				B8E68BA526332EB0008C4E2B /* CellEx.swift in Sources */,
 				E253B2492638EE2800E4D3E9 /* BaseGithubSignController.swift in Sources */,
@@ -430,6 +463,7 @@
 				B8E68BA426332EB0008C4E2B /* StringEx.swift in Sources */,
 				B80AC71D2638596200D756C3 /* ImagePickerController.swift in Sources */,
 				B8E68B9326332EB0008C4E2B /* Sandbox.swift in Sources */,
+				E262998F263A56FA006837E6 /* ImagePickerContoller+Reactive.swift in Sources */,
 				E253B24D2638EE2800E4D3E9 /* GithubDefaultValidationService.swift in Sources */,
 				E253B23B2638EDB700E4D3E9 /* ViewController.swift in Sources */,
 				B8E68B9926332EB0008C4E2B /* MKPickerController.swift in Sources */,
@@ -442,6 +476,8 @@
 				E253B2412638EDCD00E4D3E9 /* MVVMSimpleValidController.swift in Sources */,
 				E253B2522638EE4400E4D3E9 /* FeedBackController.swift in Sources */,
 				E253B24B2638EE2800E4D3E9 /* GithubDefaultAPI.swift in Sources */,
+				E26299A1263A8008006837E6 /* BothwayOperator.swift in Sources */,
+				E2629996263A78AA006837E6 /* APIWrapperController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,7 +626,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4YGH48HCL3;
+				DEVELOPMENT_TEAM = NL2TZ8P5RF;
 				INFOPLIST_FILE = RxDemos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -610,7 +646,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4YGH48HCL3;
+				DEVELOPMENT_TEAM = NL2TZ8P5RF;
 				INFOPLIST_FILE = RxDemos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

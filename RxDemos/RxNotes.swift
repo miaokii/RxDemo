@@ -456,6 +456,19 @@ class RxBag  {
         subject.onCompleted()
     }
     
+    // MARK: - BehaviorRelay
+    func behaviorRelay() {
+        let subject = BehaviorRelay<String>.init(value: "😄")
+        subject
+            .subscribe(onNext: {
+                print($0)
+            })
+            .disposed(by: bag)
+        subject.accept("😊")
+        subject.accept("😭")
+        subject.accept("😂")
+    }
+    
     // MARK: - Schedulers
     private func schedulers() {
         // 全局队列读取数据，主线程使用数据
@@ -619,6 +632,6 @@ extension RxBag {
     }
     
     static func Call() {
-        share.take()
+        share.behaviorRelay()
     }
 }

@@ -14,7 +14,8 @@ struct HomeViewModel {
         RouteModel.init(name: "Github sign", controllerType: GithubSignController.self),
         RouteModel.init(name: "RxFeedback", controllerType: FeedBackController.self),
         RouteModel.init(name: "Github search", controllerType: DirverObservableController.self),
-        RouteModel.init(name: "Image Picker", controllerType: ImagePickerController.self)
+        RouteModel.init(name: "Image Picker", controllerType: ImagePickerController.self),
+        RouteModel.init(name: "API Wrappers", controllerType: APIWrapperController.self)
     ])
 }
 
