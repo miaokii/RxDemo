@@ -61,6 +61,7 @@
 		E2C0D4E42643924A005BE709 /* UIApplication+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0D4E32643924A005BE709 /* UIApplication+Reactive.swift */; };
 		E2C0D4E62643B690005BE709 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0D4E52643B690005BE709 /* RxCLLocationManagerDelegateProxy.swift */; };
 		E2C0D4E82643B7DA005BE709 /* CLLocationManager+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0D4E72643B7DA005BE709 /* CLLocationManager+Reactive.swift */; };
+		E2C0D4ED2643EC6F005BE709 /* AddingNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0D4EC2643EC6F005BE709 /* AddingNumberController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		E2C0D4E32643924A005BE709 /* UIApplication+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Reactive.swift"; sourceTree = "<group>"; };
 		E2C0D4E52643B690005BE709 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 		E2C0D4E72643B7DA005BE709 /* CLLocationManager+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Reactive.swift"; sourceTree = "<group>"; };
+		E2C0D4EC2643EC6F005BE709 /* AddingNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNumberController.swift; sourceTree = "<group>"; };
 		ED5D810EBD22F5900F823458 /* Pods-RxNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxNotes.release.xcconfig"; path = "Target Support Files/Pods-RxNotes/Pods-RxNotes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,7 +180,7 @@
 				E2C0D4DD2643897B005BE709 /* RxDelegate */,
 				E2C0D4E226439228005BE709 /* ReactiveEx */,
 				E2355C82263670BB006ADCF2 /* Home */,
-				E26D94B826368E65007517CA /* Simple Validatoin */,
+				E26D94B826368E65007517CA /* Simple Binding */,
 				E2355C86263671AF006ADCF2 /* GithubSign */,
 				E253B24E2638EE4400E4D3E9 /* RxFeedback */,
 				E262998D263A56C9006837E6 /* ImagePicker */,
@@ -300,14 +302,15 @@
 			path = APIWrapper;
 			sourceTree = "<group>";
 		};
-		E26D94B826368E65007517CA /* Simple Validatoin */ = {
+		E26D94B826368E65007517CA /* Simple Binding */ = {
 			isa = PBXGroup;
 			children = (
+				E253B23C2638EDCD00E4D3E9 /* SimpleValidController.swift */,
 				E253B23E2638EDCD00E4D3E9 /* MVVMSimpleValidController.swift */,
 				E253B23D2638EDCD00E4D3E9 /* SimpleValidationController.swift */,
-				E253B23C2638EDCD00E4D3E9 /* SimpleValidController.swift */,
+				E2C0D4EC2643EC6F005BE709 /* AddingNumberController.swift */,
 			);
-			path = "Simple Validatoin";
+			path = "Simple Binding";
 			sourceTree = "<group>";
 		};
 		E26D94C626369B1D007517CA /* Services */ = {
@@ -484,6 +487,7 @@
 				E253B2492638EE2800E4D3E9 /* BaseGithubSignController.swift in Sources */,
 				E253B23A2638EDB700E4D3E9 /* RxBagController.swift in Sources */,
 				E26D94C826369B31007517CA /* ActivityIndicator.swift in Sources */,
+				E2C0D4ED2643EC6F005BE709 /* AddingNumberController.swift in Sources */,
 				B8E68B9F26332EB0008C4E2B /* QuickInitEx.swift in Sources */,
 				E253B23F2638EDCD00E4D3E9 /* SimpleValidController.swift in Sources */,
 				B8E68BA126332EB0008C4E2B /* DateEx.swift in Sources */,

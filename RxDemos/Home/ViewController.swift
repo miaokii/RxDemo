@@ -10,7 +10,7 @@ import RxSwift
 
 struct HomeViewModel {
     let data = Observable.just([
-        RouteModel.init(name: "Simple Validation", controllerType: SimpleValidController.self),
+        RouteModel.init(name: "Simple Binding", controllerType: SimpleValidController.self),
         RouteModel.init(name: "Github sign", controllerType: GithubSignController.self),
         RouteModel.init(name: "RxFeedback", controllerType: FeedBackController.self),
         RouteModel.init(name: "Github search", controllerType: DirverObservableController.self),
