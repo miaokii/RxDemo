@@ -23,8 +23,6 @@ class SimpleValidationController: RxBagController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
-        setValid()
     }
     
     override func setUI() {
@@ -83,7 +81,8 @@ class SimpleValidationController: RxBagController {
         }
     }
     
-    private func setValid() {
+    override func setBind() {
+        
         // 不允许为空
         let userNameValid = nameField.rx.text.orEmpty
             // 输出长度判断，有效用户名
@@ -107,17 +106,17 @@ class SimpleValidationController: RxBagController {
             // 绑定的生命周期由disposeBag管理，disposeBag被释放，未清除的绑定也释放了，同ARC
             .disposed(by: bag)
         
-        // userNameValid.bind(to: nameValidLabel.rx.isHidden)
-        //    .disposed(by: bag)
+         userNameValid.bind(to: nameValidLabel.rx.isHidden)
+            .disposed(by: bag)
         // 等价
         // =====>
         // 使用binder观察者类型
-        let usernameValidObserver = Binder.init(nameValidLabel) { (view, isHidden) in
-            view.isHidden = isHidden
-        }
-        userNameValid
-            .bind(to: usernameValidObserver)
-            .disposed(by: bag)
+//        let usernameValidObserver = Binder.init(nameValidLabel) { (view, isHidden) in
+//            view.isHidden = isHidden
+//        }
+//        userNameValid
+//            .bind(to: usernameValidObserver)
+//            .disposed(by: bag)
         
         
         passwordvalid

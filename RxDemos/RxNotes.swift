@@ -513,6 +513,29 @@ extension RxBag {
             .subscribe(onNext: { print($0) })
             .disposed(by: bag)
     }
+    
+    /// 创建 Observable 发出唯一的一个元素
+    func just() {
+        Observable.just("😊")
+            .subscribe(onNext: { print($0) },
+                       onCompleted: { print("complete") })
+            .disposed(by: bag)
+
+    }
+    
+    /// 直到订阅发生，才创建 Observable，并且为每位订阅者创建全新的 Observable
+    func deferred() {
+        let observable = Observable<Int>.deferred { Observable.interval(.seconds(1), scheduler: MainScheduler.instance)
+        }
+        
+        observable.subscribe(onNext:{
+                                print(observable);
+                                print($0) })
+            .disposed(by: bag)
+        
+        observable.subscribe(onNext: { print(observable); print("1-\($0.description)") })
+            .disposed(by: bag)
+    }
 }
 
 // MARK: - 合并序列
@@ -684,6 +707,6 @@ extension RxBag {
     }
     
     static func Call() {
-        share.combineLatest()
+        share.just()
     }
 }

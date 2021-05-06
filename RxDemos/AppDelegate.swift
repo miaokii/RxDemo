@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIColor.theme = .init(0x222831)
         RxBag.Call()
         RxProxyRegister.register()
+        
         return true
     }
 }

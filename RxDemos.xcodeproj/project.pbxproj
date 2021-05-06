@@ -306,9 +306,9 @@
 			isa = PBXGroup;
 			children = (
 				E253B23C2638EDCD00E4D3E9 /* SimpleValidController.swift */,
-				E253B23E2638EDCD00E4D3E9 /* MVVMSimpleValidController.swift */,
 				E253B23D2638EDCD00E4D3E9 /* SimpleValidationController.swift */,
 				E2C0D4EC2643EC6F005BE709 /* AddingNumberController.swift */,
+				E253B23E2638EDCD00E4D3E9 /* MVVMSimpleValidController.swift */,
 			);
 			path = "Simple Binding";
 			sourceTree = "<group>";
