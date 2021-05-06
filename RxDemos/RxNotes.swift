@@ -132,7 +132,6 @@ class RxBag  {
     static let share = RxBag()
     var bag = DisposeBag()
     
-    // MARK: - Observable
     private func observabNum() -> Observable<Int> {
         return Observable<Int>.create { (observer) -> Disposable in
             observer.onNext(1)
@@ -167,7 +166,6 @@ class RxBag  {
         }
     }
 
-    // MARK: - Single
     private func singleObservable() -> Single<[String: Any]> {
         // single其实是Result<Element, Error>类型
         return Single<[String: Any]>.create { (single) -> Disposable in
@@ -192,7 +190,6 @@ class RxBag  {
         }
     }
 
-    // MARK: - Completable事件
     private func completeObservable() -> Completable {
         return Completable.create { (completable) -> Disposable in
             let arcValue = arc4random()%2 == 1
@@ -205,7 +202,6 @@ class RxBag  {
         }
     }
 
-    // MARK: - Maybe
     private func maybeObservable() -> Maybe<String> {
         return Maybe.create { (maybe) -> Disposable in
             let arcValue = arc4random()%2
@@ -222,12 +218,10 @@ class RxBag  {
         }
     }
 
-    // MARK: - Driver
     private func dirverObservable() {
         // 查看DirverObservableController
     }
     
-    // MARK: - AnyObserver
     private func anyObserver()  {
         URLSession.shared.rx.data(request: URLRequest(url: url))
             .subscribe { (data) in
@@ -305,7 +299,6 @@ class RxBag  {
             .disposed(by: bag)
     }
     
-    // MARK: - Binder
     private func binder()  {
         let button = UIButton.init()
         
@@ -333,7 +326,6 @@ class RxBag  {
         // isEnable元素的实现就是通过Binder
     }
     
-    // MARK: - Observable & Observer 可监听也是观察者
     private func boothObservableObserver() {
         let textField = UITextField()
         
@@ -354,7 +346,6 @@ class RxBag  {
             .disposed(by: bag)
     }
     
-    // MARK: - AsyncSubject
     private func asyncSubject() {
         let subject = AsyncSubject<String>.init()
         subject.subscribe { (str) in
@@ -375,7 +366,6 @@ class RxBag  {
         subject.onCompleted()
     }
     
-    // MARK: - PublishSubject
     private func publishSubject() {
         // 对订阅者发出订阅后的元素
         let subject = PublishSubject<String>.init()
@@ -404,10 +394,9 @@ class RxBag  {
         subject.onCompleted()
     }
     
-    // MARK: - ReplaySubject
     private func replaySubject() {
         // buffersize指定添加观察之前添加监听的元素数量
-        let subject = ReplaySubject<String>.create(bufferSize: 2)
+        let subject = ReplaySubject<String>.create(bufferSize: 1)
         subject.onNext("🐷")
         subject.onNext("🐂")
         
@@ -430,7 +419,6 @@ class RxBag  {
         subject.onCompleted()
     }
     
-    // MARK: - BehaviorSubject
     private func behaviorSubject() {
         let subject = BehaviorSubject<String>.init(value: "㊗️")
         
@@ -456,7 +444,6 @@ class RxBag  {
         subject.onCompleted()
     }
     
-    // MARK: - BehaviorRelay
     func behaviorRelay() {
         let subject = BehaviorRelay<String>.init(value: "😄")
         subject
@@ -469,7 +456,6 @@ class RxBag  {
         subject.accept("😂")
     }
     
-    // MARK: - Schedulers
     private func schedulers() {
         // 全局队列读取数据，主线程使用数据
         DispatchQueue.global().async(qos: .userInitiated) {
@@ -521,16 +507,58 @@ extension RxBag {
     }
 }
 
+// MARK: - 合并序列
+extension RxBag {
+    func merge() {
+        let streamA = PublishSubject<String>()
+        let streamB = PublishSubject<String>()
+        
+        Observable.of(streamA, streamB)
+            .merge()
+            .subscribe(onNext: {print($0)})
+            .disposed(by: bag)
+        
+        streamA.onNext("🍻")
+        streamA.onNext("🍺")
+        streamB.onNext("👋")
+        streamA.onNext("🐷")
+        streamB.onError(RxError.noElements)
+        streamA.onNext("🐱")
+    }
+    
+    func startWith() {
+        Observable.of("一", "二", "三", "四")
+            .startWith("〇")
+            .subscribe(onNext: { print($0) })
+            .disposed(by: bag)
+    }
+    
+    func concat() {
+        let streamA = PublishSubject<String>()
+        let streamB = PublishSubject<String>()
+        
+        Observable.concat([streamA, streamB])
+            .subscribe(onNext: { print($0) })
+            .disposed(by: bag)
+        
+        streamA.onNext("1")
+        streamA.onNext("2")
+        streamB.onNext("A")
+//        streamA.onCompleted()
+        streamA.onError(RxError.noElements)
+        streamB.onNext("B")
+    }
+}
+
 // MARK: - 转换序列
 extension RxBag {
-    // MARK: - map
     func map() {
         Observable.of(1, 2, 3)
             .map{ $0 * 10 }
             .subscribe(onNext: { print($0) })
             .disposed(by: bag)
     }
-    // MARK: - flatMap
+
     func flatMap() {
         let streamA = Observable.of(10, 20, 30)
         let streamB: ((Int) -> Observable<Int>) = { n in
@@ -545,7 +573,6 @@ extension RxBag {
             .disposed(by: bag)
     }
     
-    // MARK: - flatMapLatest
     func flatMapLatest() {
         let stream1 = Observable.of(1, 2, 3)
         let stream2 = Observable.of(4, 5, 6)
@@ -555,7 +582,6 @@ extension RxBag {
             .disposed(by: bag)
     }
     
-    // MARK: - flatMapFirst
     func flatMapFirst() {
         let stream1 = Observable.of(1, 2, 3)
         let stream2 = Observable.of(4, 5, 6)
@@ -632,6 +658,6 @@ extension RxBag {
     }
     
     static func Call() {
-        share.behaviorRelay()
+        share.concat()
     }
 }

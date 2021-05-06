@@ -28,8 +28,13 @@ class APIWrapperController: RxBagController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var logLabel: UILabel!
     
+    private var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationSubscribe()
+        applicationStateSubscribe()
         
         let segmentValue = BehaviorRelay.init(value: 0)
         segmentControl.rx.value <=> segmentValue
@@ -101,5 +106,87 @@ class APIWrapperController: RxBagController {
             .bind(to: logLabel.rx.attributedText)
             .disposed(by: bag)
         
+        location.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.locationManager.requestLocation()
+            })
+            .disposed(by: bag)
+    }
+    
+    private func locationSubscribe() {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.rx.authorizationStatus
+            .subscribe(onNext: { state in
+                switch state {
+                case .authorizedAlways, .authorizedWhenInUse:
+                    print("位置权限已获取")
+                case .denied:
+                    print("位置权限拒绝")
+                case .restricted:
+                    print("无法使用位置权限")
+                case .notDetermined:
+                    print("待获取位置权限")
+                @unknown default:
+                    break
+                }
+            })
+            .disposed(by: bag)
+        
+        locationManager.rx
+            .didUpdateLocations
+            .subscribe(onNext: { cl in
+                print(cl)
+            })
+            .disposed(by: bag)
+        
+        locationManager.rx
+            .didFail
+            .subscribe(onNext: { print($0.localizedDescription) })
+            .disposed(by: bag)
+    }
+    
+    /// 监听程序状态
+    private func applicationStateSubscribe() {
+        UIApplication.shared.rx
+            .willTerminate
+            .subscribe(onNext: {_ in
+                print("程序被杀掉")
+            })
+            .disposed(by: bag)
+        
+        UIApplication.shared.rx
+            .willResignActive
+            .subscribe(onNext: {_ in
+                print("进入非活跃状态")
+            })
+            .disposed(by: bag)
+        
+        UIApplication.shared.rx
+            .willEnterForeground
+            .subscribe(onNext: {_ in
+                print("即将进入前台")
+            })
+            .disposed(by: bag)
+        
+        UIApplication.shared.rx
+            .didEnterBackground
+            .subscribe(onNext: {_ in
+                print("进入后台")
+            })
+            .disposed(by: bag)
+        
+        UIApplication.shared.rx
+            .didBecomeActive
+            .subscribe(onNext: {_ in
+                print("进入活跃状态")
+            })
+            .disposed(by: bag)
+        
+        UIApplication.shared.rx
+            .states
+            .subscribe(onNext: {
+                print($0)
+            })
+            .disposed(by: bag)
     }
 }

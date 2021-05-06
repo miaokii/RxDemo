@@ -56,6 +56,11 @@
 		E26D94C826369B31007517CA /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D94C726369B31007517CA /* ActivityIndicator.swift */; };
 		E29486862635727E000DE498 /* RxNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29486822635679B000DE498 /* RxNotes.swift */; };
 		E2A9FE7E26357604009A3796 /* DirverObservableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FE7D26357604009A3796 /* DirverObservableController.swift */; };
+		E2C0D4DF26438995005BE709 /* RxImagePickerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0D4DE26438995005BE709 /* RxImagePickerDelegateProxy.swift */; };
+		E2C0D4E126438EEC005BE709 /* RxUIApplicationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0D4E026438EEC005BE709 /* RxUIApplicationDelegateProxy.swift */; };
+		E2C0D4E42643924A005BE709 /* UIApplication+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0D4E32643924A005BE709 /* UIApplication+Reactive.swift */; };
+		E2C0D4E62643B690005BE709 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0D4E52643B690005BE709 /* RxCLLocationManagerDelegateProxy.swift */; };
+		E2C0D4E82643B7DA005BE709 /* CLLocationManager+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0D4E72643B7DA005BE709 /* CLLocationManager+Reactive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +119,11 @@
 		E26D94C726369B31007517CA /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		E29486822635679B000DE498 /* RxNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNotes.swift; sourceTree = "<group>"; };
 		E2A9FE7D26357604009A3796 /* DirverObservableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirverObservableController.swift; sourceTree = "<group>"; };
+		E2C0D4DE26438995005BE709 /* RxImagePickerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxImagePickerDelegateProxy.swift; sourceTree = "<group>"; };
+		E2C0D4E026438EEC005BE709 /* RxUIApplicationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUIApplicationDelegateProxy.swift; sourceTree = "<group>"; };
+		E2C0D4E32643924A005BE709 /* UIApplication+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Reactive.swift"; sourceTree = "<group>"; };
+		E2C0D4E52643B690005BE709 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
+		E2C0D4E72643B7DA005BE709 /* CLLocationManager+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Reactive.swift"; sourceTree = "<group>"; };
 		ED5D810EBD22F5900F823458 /* Pods-RxNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxNotes.release.xcconfig"; path = "Target Support Files/Pods-RxNotes/Pods-RxNotes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +153,7 @@
 		B8E68B102633273A008C4E2B = {
 			isa = PBXGroup;
 			children = (
+				B8E68B7A26332E60008C4E2B /* QuickUI */,
 				B8E68B1B2633273A008C4E2B /* RxDemos */,
 				B8E68B1A2633273A008C4E2B /* Products */,
 				07AC28610717D9BCA20D6D70 /* Pods */,
@@ -163,9 +174,9 @@
 			children = (
 				E29486822635679B000DE498 /* RxNotes.swift */,
 				B8E68B1C2633273A008C4E2B /* AppDelegate.swift */,
-				E2629990263A5884006837E6 /* RxProxyRegister.swift */,
 				E26D94C626369B1D007517CA /* Services */,
-				B8E68B7A26332E60008C4E2B /* QuickUI */,
+				E2C0D4DD2643897B005BE709 /* RxDelegate */,
+				E2C0D4E226439228005BE709 /* ReactiveEx */,
 				E2355C82263670BB006ADCF2 /* Home */,
 				E26D94B826368E65007517CA /* Simple Validatoin */,
 				E2355C86263671AF006ADCF2 /* GithubSign */,
@@ -252,9 +263,9 @@
 		E2355C86263671AF006ADCF2 /* GithubSign */ = {
 			isa = PBXGroup;
 			children = (
-				E253B2432638EE2800E4D3E9 /* BaseGithubSignController.swift */,
 				E253B2452638EE2800E4D3E9 /* GithubDefaultAPI.swift */,
 				E253B2472638EE2800E4D3E9 /* GithubDefaultValidationService.swift */,
+				E253B2432638EE2800E4D3E9 /* BaseGithubSignController.swift */,
 				E253B2462638EE2800E4D3E9 /* GithubSignController.swift */,
 				E253B2422638EE2800E4D3E9 /* MVVMGithubSignController.swift */,
 				E253B2442638EE2800E4D3E9 /* Protocols.swift */,
@@ -276,7 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				B80AC71C2638596200D756C3 /* ImagePickerController.swift */,
-				E262998E263A56FA006837E6 /* ImagePickerContoller+Reactive.swift */,
 			);
 			path = ImagePicker;
 			sourceTree = "<group>";
@@ -308,6 +318,27 @@
 				E253B2532638EE6500E4D3E9 /* Wrieframe.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		E2C0D4DD2643897B005BE709 /* RxDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E2629990263A5884006837E6 /* RxProxyRegister.swift */,
+				E2C0D4DE26438995005BE709 /* RxImagePickerDelegateProxy.swift */,
+				E2C0D4E026438EEC005BE709 /* RxUIApplicationDelegateProxy.swift */,
+				E2C0D4E52643B690005BE709 /* RxCLLocationManagerDelegateProxy.swift */,
+			);
+			path = RxDelegate;
+			sourceTree = "<group>";
+		};
+		E2C0D4E226439228005BE709 /* ReactiveEx */ = {
+			isa = PBXGroup;
+			children = (
+				E262998E263A56FA006837E6 /* ImagePickerContoller+Reactive.swift */,
+				E2C0D4E32643924A005BE709 /* UIApplication+Reactive.swift */,
+				E2C0D4E72643B7DA005BE709 /* CLLocationManager+Reactive.swift */,
+			);
+			path = ReactiveEx;
 			sourceTree = "<group>";
 		};
 		EAA15D727796E745E42B28E3 /* Frameworks */ = {
@@ -438,12 +469,14 @@
 				B84F4C242637191D00C66818 /* DriverGithubSignController.swift in Sources */,
 				E253B24A2638EE2800E4D3E9 /* Protocols.swift in Sources */,
 				B8E68B1D2633273A008C4E2B /* AppDelegate.swift in Sources */,
+				E2C0D4E82643B7DA005BE709 /* CLLocationManager+Reactive.swift in Sources */,
 				B8E68BA626332EB0008C4E2B /* UIButtonEx.swift in Sources */,
 				B8E68B9826332EB0008C4E2B /* MKViewController.swift in Sources */,
 				B8E68B9726332EB0008C4E2B /* MKView.swift in Sources */,
 				E253B2512638EE4400E4D3E9 /* CountNumController.swift in Sources */,
 				B8E68B9E26332EB0008C4E2B /* UIScrollViewEx.swift in Sources */,
 				E253B24C2638EE2800E4D3E9 /* GithubSignController.swift in Sources */,
+				E2C0D4E126438EEC005BE709 /* RxUIApplicationDelegateProxy.swift in Sources */,
 				B8E68B9626332EB0008C4E2B /* MKScrollController.swift in Sources */,
 				E2629991263A5884006837E6 /* RxProxyRegister.swift in Sources */,
 				E253B2542638EE6500E4D3E9 /* Wrieframe.swift in Sources */,
@@ -470,13 +503,16 @@
 				E253B2482638EE2800E4D3E9 /* MVVMGithubSignController.swift in Sources */,
 				B8E68B9B26332EB0008C4E2B /* MKBasePopController.swift in Sources */,
 				B8E68B9A26332EB0008C4E2B /* MKPopViewController.swift in Sources */,
+				E2C0D4DF26438995005BE709 /* RxImagePickerDelegateProxy.swift in Sources */,
 				B8E68BA026332EB0008C4E2B /* UIViewEx.swift in Sources */,
 				B8E68BA326332EB0008C4E2B /* UIImageEx.swift in Sources */,
 				E2A9FE7E26357604009A3796 /* DirverObservableController.swift in Sources */,
 				E253B2412638EDCD00E4D3E9 /* MVVMSimpleValidController.swift in Sources */,
 				E253B2522638EE4400E4D3E9 /* FeedBackController.swift in Sources */,
+				E2C0D4E62643B690005BE709 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				E253B24B2638EE2800E4D3E9 /* GithubDefaultAPI.swift in Sources */,
 				E26299A1263A8008006837E6 /* BothwayOperator.swift in Sources */,
+				E2C0D4E42643924A005BE709 /* UIApplication+Reactive.swift in Sources */,
 				E2629996263A78AA006837E6 /* APIWrapperController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
