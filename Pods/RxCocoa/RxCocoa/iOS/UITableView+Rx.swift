@@ -92,6 +92,24 @@ extension Reactive where Base: UITableView {
         }
     }
 
+    public func items<Sequence: Swift.Sequence, Cell: UITableViewCell, Source: ObservableType>
+        (cellIdentifier: String, style: UITableViewCell.CellStyle = .default, cellType: Cell.Type = Cell.self)
+        -> (_ source: Source)
+        -> (_ configureCell: @escaping(Int, Sequence.Element, Cell)->Void)
+        -> Disposable
+            where Source.Element == Sequence {
+        return {
+            source in
+            return { configureCell in
+                let dataSource = RxTableViewReactiveArrayDataSourceSequenceWrapper<Sequence> { tv, i, item in
+                    let cell = tv.dequeueReusableCell(withIdentifier: cellIdentifier) as? Cell ?? Cell.init(style: style, reuseIdentifier: cellIdentifier)
+                    configureCell(i, item, cell)
+                    return cell
+                }
+                return self.items(dataSource: dataSource)(source)
+            }
+        }
+    }
 
     /**
     Binds sequences of elements to table view rows using a custom reactive data used to perform the transformation.

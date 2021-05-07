@@ -77,10 +77,10 @@ public extension UITableView {
     /// 寻找复用cell，如果没找到会创建
     /// - Parameter type: cell类型
     /// - Returns: type类型的cell
-    func dequeueCell<T: UITableViewCell>(type: T.Type) -> T {
+    func dequeueCell<T: UITableViewCell>(type: T.Type, style: UITableViewCell.CellStyle = .default) -> T {
         var cell = dequeueReusableCell(withIdentifier: type.reuseID) as? T
         if cell == nil {
-            cell = T.init(style: .default, reuseIdentifier: type.reuseID)
+            cell = T.init(style: style, reuseIdentifier: type.reuseID)
         }
         return cell!
     }

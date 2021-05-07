@@ -34,8 +34,9 @@
 		B8E68BA526332EB0008C4E2B /* CellEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68B9126332EB0008C4E2B /* CellEx.swift */; };
 		B8E68BA626332EB0008C4E2B /* UIButtonEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68B9226332EB0008C4E2B /* UIButtonEx.swift */; };
 		B8E68BA926332F3C008C4E2B /* MKPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68BA826332F3C008C4E2B /* MKPageViewController.swift */; };
+		E2002386264528E600471BC5 /* GithubLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2002385264528E600471BC5 /* GithubLanguageViewModel.swift */; };
 		E253B23A2638EDB700E4D3E9 /* RxBagController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B2382638EDB700E4D3E9 /* RxBagController.swift */; };
-		E253B23B2638EDB700E4D3E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B2392638EDB700E4D3E9 /* ViewController.swift */; };
+		E253B23B2638EDB700E4D3E9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B2392638EDB700E4D3E9 /* HomeViewController.swift */; };
 		E253B23F2638EDCD00E4D3E9 /* SimpleValidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B23C2638EDCD00E4D3E9 /* SimpleValidController.swift */; };
 		E253B2402638EDCD00E4D3E9 /* SimpleValidationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B23D2638EDCD00E4D3E9 /* SimpleValidationController.swift */; };
 		E253B2412638EDCD00E4D3E9 /* MVVMSimpleValidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B23E2638EDCD00E4D3E9 /* MVVMSimpleValidController.swift */; };
@@ -56,6 +57,15 @@
 		E26D94C826369B31007517CA /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D94C726369B31007517CA /* ActivityIndicator.swift */; };
 		E29486862635727E000DE498 /* RxNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29486822635679B000DE498 /* RxNotes.swift */; };
 		E2A9FE7E26357604009A3796 /* DirverObservableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FE7D26357604009A3796 /* DirverObservableController.swift */; };
+		E2AFA6822644DDB300AF5B72 /* GithubTrendPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA6812644DDB300AF5B72 /* GithubTrendPageController.swift */; };
+		E2AFA6872644DE8000AF5B72 /* MVCTrendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA6862644DE8000AF5B72 /* MVCTrendController.swift */; };
+		E2AFA6892644DE9B00AF5B72 /* MVCLanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA6882644DE9B00AF5B72 /* MVCLanguageController.swift */; };
+		E2AFA68B2644DEE000AF5B72 /* GithubTrendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA68A2644DEE000AF5B72 /* GithubTrendService.swift */; };
+		E2AFA68D2644DEEC00AF5B72 /* GithubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA68C2644DEEC00AF5B72 /* GithubRepo.swift */; };
+		E2AFA68F26450BDD00AF5B72 /* UITableView+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA68E26450BDC00AF5B72 /* UITableView+Reactive.swift */; };
+		E2AFA69126451E7600AF5B72 /* GithubTrendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA69026451E7600AF5B72 /* GithubTrendController.swift */; };
+		E2AFA69326451E8500AF5B72 /* GithubLanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA69226451E8500AF5B72 /* GithubLanguageController.swift */; };
+		E2AFA69526451EAD00AF5B72 /* GithubTrendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA69426451EAD00AF5B72 /* GithubTrendViewModel.swift */; };
 		E2C0D4DF26438995005BE709 /* RxImagePickerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0D4DE26438995005BE709 /* RxImagePickerDelegateProxy.swift */; };
 		E2C0D4E126438EEC005BE709 /* RxUIApplicationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0D4E026438EEC005BE709 /* RxUIApplicationDelegateProxy.swift */; };
 		E2C0D4E42643924A005BE709 /* UIApplication+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0D4E32643924A005BE709 /* UIApplication+Reactive.swift */; };
@@ -98,8 +108,9 @@
 		B8E68B9126332EB0008C4E2B /* CellEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellEx.swift; sourceTree = "<group>"; };
 		B8E68B9226332EB0008C4E2B /* UIButtonEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonEx.swift; sourceTree = "<group>"; };
 		B8E68BA826332F3C008C4E2B /* MKPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPageViewController.swift; sourceTree = "<group>"; };
+		E2002385264528E600471BC5 /* GithubLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubLanguageViewModel.swift; sourceTree = "<group>"; };
 		E253B2382638EDB700E4D3E9 /* RxBagController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxBagController.swift; sourceTree = "<group>"; };
-		E253B2392638EDB700E4D3E9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E253B2392638EDB700E4D3E9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E253B23C2638EDCD00E4D3E9 /* SimpleValidController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleValidController.swift; sourceTree = "<group>"; };
 		E253B23D2638EDCD00E4D3E9 /* SimpleValidationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleValidationController.swift; sourceTree = "<group>"; };
 		E253B23E2638EDCD00E4D3E9 /* MVVMSimpleValidController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMSimpleValidController.swift; sourceTree = "<group>"; };
@@ -120,6 +131,15 @@
 		E26D94C726369B31007517CA /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		E29486822635679B000DE498 /* RxNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNotes.swift; sourceTree = "<group>"; };
 		E2A9FE7D26357604009A3796 /* DirverObservableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirverObservableController.swift; sourceTree = "<group>"; };
+		E2AFA6812644DDB300AF5B72 /* GithubTrendPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendPageController.swift; sourceTree = "<group>"; };
+		E2AFA6862644DE8000AF5B72 /* MVCTrendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCTrendController.swift; sourceTree = "<group>"; };
+		E2AFA6882644DE9B00AF5B72 /* MVCLanguageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCLanguageController.swift; sourceTree = "<group>"; };
+		E2AFA68A2644DEE000AF5B72 /* GithubTrendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendService.swift; sourceTree = "<group>"; };
+		E2AFA68C2644DEEC00AF5B72 /* GithubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepo.swift; sourceTree = "<group>"; };
+		E2AFA68E26450BDC00AF5B72 /* UITableView+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reactive.swift"; sourceTree = "<group>"; };
+		E2AFA69026451E7600AF5B72 /* GithubTrendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendController.swift; sourceTree = "<group>"; };
+		E2AFA69226451E8500AF5B72 /* GithubLanguageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubLanguageController.swift; sourceTree = "<group>"; };
+		E2AFA69426451EAD00AF5B72 /* GithubTrendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTrendViewModel.swift; sourceTree = "<group>"; };
 		E2C0D4DE26438995005BE709 /* RxImagePickerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxImagePickerDelegateProxy.swift; sourceTree = "<group>"; };
 		E2C0D4E026438EEC005BE709 /* RxUIApplicationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUIApplicationDelegateProxy.swift; sourceTree = "<group>"; };
 		E2C0D4E32643924A005BE709 /* UIApplication+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Reactive.swift"; sourceTree = "<group>"; };
@@ -182,6 +202,7 @@
 				E2355C82263670BB006ADCF2 /* Home */,
 				E26D94B826368E65007517CA /* Simple Binding */,
 				E2355C86263671AF006ADCF2 /* GithubSign */,
+				E2AFA6832644DDB600AF5B72 /* GithubTrend */,
 				E253B24E2638EE4400E4D3E9 /* RxFeedback */,
 				E262998D263A56C9006837E6 /* ImagePicker */,
 				E262999F263A7E14006837E6 /* APIWrapper */,
@@ -257,7 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				E253B2382638EDB700E4D3E9 /* RxBagController.swift */,
-				E253B2392638EDB700E4D3E9 /* ViewController.swift */,
+				E253B2392638EDB700E4D3E9 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -323,6 +344,38 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		E2AFA6832644DDB600AF5B72 /* GithubTrend */ = {
+			isa = PBXGroup;
+			children = (
+				E2AFA6812644DDB300AF5B72 /* GithubTrendPageController.swift */,
+				E2AFA68A2644DEE000AF5B72 /* GithubTrendService.swift */,
+				E2AFA68C2644DEEC00AF5B72 /* GithubRepo.swift */,
+				E2AFA6842644DE4400AF5B72 /* MVC */,
+				E2AFA6852644DE4500AF5B72 /* MVVM */,
+			);
+			path = GithubTrend;
+			sourceTree = "<group>";
+		};
+		E2AFA6842644DE4400AF5B72 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				E2AFA6862644DE8000AF5B72 /* MVCTrendController.swift */,
+				E2AFA6882644DE9B00AF5B72 /* MVCLanguageController.swift */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		E2AFA6852644DE4500AF5B72 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				E2AFA69026451E7600AF5B72 /* GithubTrendController.swift */,
+				E2AFA69426451EAD00AF5B72 /* GithubTrendViewModel.swift */,
+				E2AFA69226451E8500AF5B72 /* GithubLanguageController.swift */,
+				E2002385264528E600471BC5 /* GithubLanguageViewModel.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
 		E2C0D4DD2643897B005BE709 /* RxDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +393,7 @@
 				E262998E263A56FA006837E6 /* ImagePickerContoller+Reactive.swift */,
 				E2C0D4E32643924A005BE709 /* UIApplication+Reactive.swift */,
 				E2C0D4E72643B7DA005BE709 /* CLLocationManager+Reactive.swift */,
+				E2AFA68E26450BDC00AF5B72 /* UITableView+Reactive.swift */,
 			);
 			path = ReactiveEx;
 			sourceTree = "<group>";
@@ -470,6 +524,7 @@
 			files = (
 				E29486862635727E000DE498 /* RxNotes.swift in Sources */,
 				B84F4C242637191D00C66818 /* DriverGithubSignController.swift in Sources */,
+				E2AFA68D2644DEEC00AF5B72 /* GithubRepo.swift in Sources */,
 				E253B24A2638EE2800E4D3E9 /* Protocols.swift in Sources */,
 				B8E68B1D2633273A008C4E2B /* AppDelegate.swift in Sources */,
 				E2C0D4E82643B7DA005BE709 /* CLLocationManager+Reactive.swift in Sources */,
@@ -482,8 +537,10 @@
 				E2C0D4E126438EEC005BE709 /* RxUIApplicationDelegateProxy.swift in Sources */,
 				B8E68B9626332EB0008C4E2B /* MKScrollController.swift in Sources */,
 				E2629991263A5884006837E6 /* RxProxyRegister.swift in Sources */,
+				E2AFA68B2644DEE000AF5B72 /* GithubTrendService.swift in Sources */,
 				E253B2542638EE6500E4D3E9 /* Wrieframe.swift in Sources */,
 				B8E68BA526332EB0008C4E2B /* CellEx.swift in Sources */,
+				E2AFA69126451E7600AF5B72 /* GithubTrendController.swift in Sources */,
 				E253B2492638EE2800E4D3E9 /* BaseGithubSignController.swift in Sources */,
 				E253B23A2638EDB700E4D3E9 /* RxBagController.swift in Sources */,
 				E26D94C826369B31007517CA /* ActivityIndicator.swift in Sources */,
@@ -493,30 +550,37 @@
 				B8E68BA126332EB0008C4E2B /* DateEx.swift in Sources */,
 				B8E68B9426332EB0008C4E2B /* Layout.swift in Sources */,
 				B8E68BA926332F3C008C4E2B /* MKPageViewController.swift in Sources */,
+				E2AFA69326451E8500AF5B72 /* GithubLanguageController.swift in Sources */,
 				B8E68B9526332EB0008C4E2B /* MKAuthCodeView.swift in Sources */,
 				B8E68B9D26332EB0008C4E2B /* MKTimer.swift in Sources */,
 				B8E68BA226332EB0008C4E2B /* UIColorEx.swift in Sources */,
 				E253B2402638EDCD00E4D3E9 /* SimpleValidationController.swift in Sources */,
+				E2AFA69526451EAD00AF5B72 /* GithubTrendViewModel.swift in Sources */,
 				B8E68BA426332EB0008C4E2B /* StringEx.swift in Sources */,
 				B80AC71D2638596200D756C3 /* ImagePickerController.swift in Sources */,
 				B8E68B9326332EB0008C4E2B /* Sandbox.swift in Sources */,
 				E262998F263A56FA006837E6 /* ImagePickerContoller+Reactive.swift in Sources */,
 				E253B24D2638EE2800E4D3E9 /* GithubDefaultValidationService.swift in Sources */,
-				E253B23B2638EDB700E4D3E9 /* ViewController.swift in Sources */,
+				E253B23B2638EDB700E4D3E9 /* HomeViewController.swift in Sources */,
 				B8E68B9926332EB0008C4E2B /* MKPickerController.swift in Sources */,
 				E253B2482638EE2800E4D3E9 /* MVVMGithubSignController.swift in Sources */,
 				B8E68B9B26332EB0008C4E2B /* MKBasePopController.swift in Sources */,
+				E2002386264528E600471BC5 /* GithubLanguageViewModel.swift in Sources */,
 				B8E68B9A26332EB0008C4E2B /* MKPopViewController.swift in Sources */,
 				E2C0D4DF26438995005BE709 /* RxImagePickerDelegateProxy.swift in Sources */,
 				B8E68BA026332EB0008C4E2B /* UIViewEx.swift in Sources */,
 				B8E68BA326332EB0008C4E2B /* UIImageEx.swift in Sources */,
+				E2AFA68F26450BDD00AF5B72 /* UITableView+Reactive.swift in Sources */,
+				E2AFA6822644DDB300AF5B72 /* GithubTrendPageController.swift in Sources */,
 				E2A9FE7E26357604009A3796 /* DirverObservableController.swift in Sources */,
 				E253B2412638EDCD00E4D3E9 /* MVVMSimpleValidController.swift in Sources */,
 				E253B2522638EE4400E4D3E9 /* FeedBackController.swift in Sources */,
 				E2C0D4E62643B690005BE709 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				E2AFA6892644DE9B00AF5B72 /* MVCLanguageController.swift in Sources */,
 				E253B24B2638EE2800E4D3E9 /* GithubDefaultAPI.swift in Sources */,
 				E26299A1263A8008006837E6 /* BothwayOperator.swift in Sources */,
 				E2C0D4E42643924A005BE709 /* UIApplication+Reactive.swift in Sources */,
+				E2AFA6872644DE8000AF5B72 /* MVCTrendController.swift in Sources */,
 				E2629996263A78AA006837E6 /* APIWrapperController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
