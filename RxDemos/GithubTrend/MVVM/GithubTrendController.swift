@@ -10,7 +10,7 @@ import UIKit
 class GithubTrendController: RxBagController {
     
     private let viewModel = GithubTrendViewModel.init(language: "Swift", githubService: .share)
-    private let rightItem = UIBarButtonItem.init(image: .init(systemName: "list.dash"))
+    private let rightItem = UIBarButtonItem.init(image: UIImage.init(systemName: "list.dash"))
     private let refreshControl = UIRefreshControl.init()
     
     override func viewDidLoad() {
