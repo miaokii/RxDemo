@@ -56,6 +56,10 @@
 		E2629996263A78AA006837E6 /* APIWrapperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2629994263A78AA006837E6 /* APIWrapperController.swift */; };
 		E2629997263A78AA006837E6 /* APIWrapperController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2629995263A78AA006837E6 /* APIWrapperController.xib */; };
 		E26299A1263A8008006837E6 /* BothwayOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26299A0263A8008006837E6 /* BothwayOperator.swift */; };
+		E263F4FC2646A0E800767B06 /* HealthMailSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263F4F82646A0E800767B06 /* HealthMailSearchViewModel.swift */; };
+		E263F4FD2646A0E800767B06 /* HealthMailSearchViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263F4F92646A0E800767B06 /* HealthMailSearchViews.swift */; };
+		E263F4FE2646A0E800767B06 /* BothwayOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263F4FA2646A0E800767B06 /* BothwayOperator.swift */; };
+		E263F4FF2646A0E800767B06 /* HealthMailSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263F4FB2646A0E800767B06 /* HealthMailSearchController.swift */; };
 		E26D94C826369B31007517CA /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D94C726369B31007517CA /* ActivityIndicator.swift */; };
 		E29486862635727E000DE498 /* RxNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29486822635679B000DE498 /* RxNotes.swift */; };
 		E2A9FE7E26357604009A3796 /* DirverObservableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FE7D26357604009A3796 /* DirverObservableController.swift */; };
@@ -132,6 +136,10 @@
 		E2629994263A78AA006837E6 /* APIWrapperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWrapperController.swift; sourceTree = "<group>"; };
 		E2629995263A78AA006837E6 /* APIWrapperController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APIWrapperController.xib; sourceTree = "<group>"; };
 		E26299A0263A8008006837E6 /* BothwayOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BothwayOperator.swift; sourceTree = "<group>"; };
+		E263F4F82646A0E800767B06 /* HealthMailSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthMailSearchViewModel.swift; sourceTree = "<group>"; };
+		E263F4F92646A0E800767B06 /* HealthMailSearchViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthMailSearchViews.swift; sourceTree = "<group>"; };
+		E263F4FA2646A0E800767B06 /* BothwayOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BothwayOperator.swift; sourceTree = "<group>"; };
+		E263F4FB2646A0E800767B06 /* HealthMailSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthMailSearchController.swift; sourceTree = "<group>"; };
 		E26D94C726369B31007517CA /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		E29486822635679B000DE498 /* RxNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNotes.swift; sourceTree = "<group>"; };
 		E2A9FE7D26357604009A3796 /* DirverObservableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirverObservableController.swift; sourceTree = "<group>"; };
@@ -210,6 +218,7 @@
 				E253B24E2638EE4400E4D3E9 /* RxFeedback */,
 				E262998D263A56C9006837E6 /* ImagePicker */,
 				E262999F263A7E14006837E6 /* APIWrapper */,
+				E263F4F72646A0E800767B06 /* Search */,
 				B8E68B252633273B008C4E2B /* Assets.xcassets */,
 				E2A9FE7D26357604009A3796 /* DirverObservableController.swift */,
 				B857A3DC26459CAA00E45AB7 /* GithubSearchController.swift */,
@@ -327,6 +336,17 @@
 				E2629995263A78AA006837E6 /* APIWrapperController.xib */,
 			);
 			path = APIWrapper;
+			sourceTree = "<group>";
+		};
+		E263F4F72646A0E800767B06 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E263F4F82646A0E800767B06 /* HealthMailSearchViewModel.swift */,
+				E263F4F92646A0E800767B06 /* HealthMailSearchViews.swift */,
+				E263F4FA2646A0E800767B06 /* BothwayOperator.swift */,
+				E263F4FB2646A0E800767B06 /* HealthMailSearchController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		E26D94B826368E65007517CA /* Simple Binding */ = {
@@ -557,6 +577,7 @@
 				B8E68BA126332EB0008C4E2B /* DateEx.swift in Sources */,
 				B8E68B9426332EB0008C4E2B /* Layout.swift in Sources */,
 				B8E68BA926332F3C008C4E2B /* MKPageViewController.swift in Sources */,
+				E263F4FF2646A0E800767B06 /* HealthMailSearchController.swift in Sources */,
 				E2AFA69326451E8500AF5B72 /* GithubLanguageController.swift in Sources */,
 				B8E68B9526332EB0008C4E2B /* MKAuthCodeView.swift in Sources */,
 				B8E68B9D26332EB0008C4E2B /* MKTimer.swift in Sources */,
@@ -564,7 +585,9 @@
 				E253B2402638EDCD00E4D3E9 /* SimpleValidationController.swift in Sources */,
 				E2AFA69526451EAD00AF5B72 /* GithubTrendViewModel.swift in Sources */,
 				B8E68BA426332EB0008C4E2B /* StringEx.swift in Sources */,
+				E263F4FC2646A0E800767B06 /* HealthMailSearchViewModel.swift in Sources */,
 				B80AC71D2638596200D756C3 /* ImagePickerController.swift in Sources */,
+				E263F4FD2646A0E800767B06 /* HealthMailSearchViews.swift in Sources */,
 				B8E68B9326332EB0008C4E2B /* Sandbox.swift in Sources */,
 				E262998F263A56FA006837E6 /* ImagePickerContoller+Reactive.swift in Sources */,
 				E253B24D2638EE2800E4D3E9 /* GithubDefaultValidationService.swift in Sources */,
@@ -590,6 +613,7 @@
 				E2C0D4E42643924A005BE709 /* UIApplication+Reactive.swift in Sources */,
 				E2AFA6872644DE8000AF5B72 /* MVCTrendController.swift in Sources */,
 				E2629996263A78AA006837E6 /* APIWrapperController.swift in Sources */,
+				E263F4FE2646A0E800767B06 /* BothwayOperator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
