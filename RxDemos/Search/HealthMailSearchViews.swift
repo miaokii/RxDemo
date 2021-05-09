@@ -81,7 +81,7 @@ class MailSearchHistoryCell: UICollectionViewCell {
                                     textColor: .textColorLevel2,
                                     font: .systemFont(ofSize: 14),
                                     aligment: .center)
-        addressLabel.cornerRadius = 3
+        addressLabel.layer.cornerRadius = 3
         addressLabel.backgroundColor = .tableViewBackground
         addressLabel.clipsToBounds = true
         addressLabel.snp.makeConstraints { (make) in

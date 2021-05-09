@@ -17,6 +17,7 @@ struct HomeViewModel {
         RouteModel.init(name: "API Wrappers", controllerType: APIWrapperController.self),
         RouteModel.init(name: "RxFeedback", controllerType: FeedBackController.self),
         RouteModel.init(name: "Github search", controllerType: GithubSearchController.self),
+        .init(name: "Search", controllerType: HealthMailSearchController.self)
     ])
 }
 

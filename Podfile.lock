@@ -1,8 +1,15 @@
 PODS:
+  - Differentiator (5.0.0)
   - MBProgressHUD (1.2.0)
+  - "NSObject+Rx (5.2.1)":
+    - RxSwift (~> 6.0)
   - RxCocoa (6.1.0):
     - RxRelay (= 6.1.0)
     - RxSwift (= 6.1.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxFeedback (4.0.0):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
@@ -13,28 +20,36 @@ PODS:
 
 DEPENDENCIES:
   - MBProgressHUD
+  - "NSObject+Rx"
   - RxCocoa
+  - RxDataSources
   - RxFeedback
   - RxSwift
   - SnapKit
 
 SPEC REPOS:
   trunk:
+    - Differentiator
     - MBProgressHUD
+    - "NSObject+Rx"
     - RxCocoa
+    - RxDataSources
     - RxFeedback
     - RxRelay
     - RxSwift
     - SnapKit
 
 SPEC CHECKSUMS:
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  "NSObject+Rx": 49ffbf55ad0bbc29a44547db63a9e33caf0c5d60
   RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxFeedback: c762a59b678ed8e30b5c84b6e4e03ad0341d2ecb
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 92d310fb50f01c766b36bc2cb731c38049d1afc0
+PODFILE CHECKSUM: eacd2ca059955b8e9e0f26eb3adcef5b75978780
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

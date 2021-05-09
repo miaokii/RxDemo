@@ -9,5 +9,6 @@ pod 'RxCocoa'
 pod 'MBProgressHUD'
 pod 'SnapKit'
 pod 'RxFeedback'
-
+pod 'RxDataSources'
+pod 'NSObject+Rx'
 end

@@ -22,8 +22,6 @@ class HealthMailSearchViewModel {
     let newSearchKey: AnyObserver<String>
     /// 实时搜索
     let editSearchKey: AnyObserver<String>
-    /// 开始输入
-    let beginEdit: AnyObserver<Void>
     
     // MARK: - output
     /// 热门搜索记录
@@ -57,26 +55,19 @@ class HealthMailSearchViewModel {
                  MailSearchSection.init(header: "搜索发现", items: pair.hot)]
             }
         
-        let _beginEdit = PublishSubject<Void>.init()
-        beginEdit = _beginEdit.asObserver()
-        
-        _beginEdit
-            .map{ false }
-            .bind(to: showEditSearchResult)
-            .disposed(by: bag)
-        
         let _editSearchKey = PublishSubject<String>.init()
         editSearchKey = _editSearchKey.asObserver()
         
         editSearchResult = _editSearchKey
-            .throttle(0.3, scheduler: MainScheduler.instance)
-            .flatMapLatest({ key in
-                fetchAutoCompleteItems(key)
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .debug()
+            .flatMapLatest({ key -> Observable<[String]> in
+                key.isEmpty ? .just([]) : fetchAutoCompleteItems(key)
             })
             .asObservable()
         
         editSearchResult
-            .map{ $0.isEmpty }
+            .map{ !$0.isEmpty }
             .bind(to: showEditSearchResult)
             .disposed(by: bag)
         
@@ -102,20 +93,7 @@ class HealthMailSearchViewModel {
 }
 
 private func fetchAutoCompleteItems(_ key: String) -> Observable<[String]> {
-    let count = arc4random() % 20
-    let digits = Int(arc4random()%20 + 1)
-    let arr = (0..<count).map({ _ in String.randomStr(len: digits) })
+    let count = arc4random() % 20 + 1
+    let arr = (0..<count).map({ _ in key+String.randomStr(len: Int(arc4random()%20 + 1)) })
     return Observable.just(arr)
-}
-
-extension String{
-    static let random_str_characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    static func randomStr(len : Int) -> String{
-        var ranStr = ""
-        for _ in 0..<len {
-            let index = Int(arc4random_uniform(UInt32(random_str_characters.count)))
-            ranStr.append(random_str_characters[random_str_characters.index(random_str_characters.startIndex, offsetBy: index)])
-        }
-        return ranStr
-    }
 }

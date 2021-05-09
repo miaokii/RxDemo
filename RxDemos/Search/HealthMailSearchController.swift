@@ -100,6 +100,7 @@ class HealthMailSearchController: RxViewController {
             .disposed(by: rx.disposeBag)
         
         viewModel.showEditSearchResult
+            .map{!$0}
             .bind(to: tableView.rx.isHidden)
             .disposed(by: rx.disposeBag)
         
@@ -116,9 +117,10 @@ class HealthMailSearchController: RxViewController {
             .bind(to: viewModel.newSearchKey)
             .disposed(by: rx.disposeBag)
         
-        
-        searchField.rx.controlEvent(.editingDidBegin)
-            .bind(to: viewModel.beginEdit)
+        searchField.rx.controlEvent(.editingDidEnd)
+            .map{[weak self] in self?.searchField.text ?? ""}
+            .filter{$0.count > 0}
+            .bind(to: viewModel.newSearchKey)
             .disposed(by: rx.disposeBag)
         
         let searchKey = BehaviorRelay<String>.init(value: "")
@@ -130,9 +132,7 @@ class HealthMailSearchController: RxViewController {
             .disposed(by: rx.disposeBag)
         
         searchBtn.rx.tap
-            .map{[weak self] in self?.searchField.text ?? ""}
-            .filter{$0.count > 0}
-            .bind(to: viewModel.newSearchKey)
+            .subscribe(onNext: { [weak self] in self?.searchEndEdit()})
             .disposed(by: rx.disposeBag)
         
         viewModel.editSearchResult
@@ -140,6 +140,21 @@ class HealthMailSearchController: RxViewController {
                 cell.textLabel?.text = key
             }
             .disposed(by: rx.disposeBag)
+        
+//        tableView.rx.modelSelected(String.self)
+//            .do()
+//            .map({_ in})
+//            .subscribe(onNext: { [weak self] in self?.searchEndEdit()})
+//            .disposed(by: rx.disposeBag)
+        
+        tableView.rx.modelSelected(String.self)
+            .bind(to: viewModel.newSearchKey)
+            .disposed(by: rx.disposeBag)
+    }
+    
+    private func searchEndEdit() {
+        searchField.text = ""
+        searchField.resignFirstResponder()
     }
 }
 

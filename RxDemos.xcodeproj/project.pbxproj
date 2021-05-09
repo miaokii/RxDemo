@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		90B7B3042742500CF2BC68FC /* Pods_RxDemos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71EF8CC10813A69396D680EC /* Pods_RxDemos.framework */; };
 		B80AC71D2638596200D756C3 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80AC71C2638596200D756C3 /* ImagePickerController.swift */; };
+		B81AF7952646F1B800868735 /* HealthMailSearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81AF7942646F1B800868735 /* HealthMailSearchResultController.swift */; };
 		B84F4C242637191D00C66818 /* DriverGithubSignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4C232637191D00C66818 /* DriverGithubSignController.swift */; };
 		B857A3DD26459CAA00E45AB7 /* GithubSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857A3DC26459CAA00E45AB7 /* GithubSearchController.swift */; };
 		B857A3F02645A11300E45AB7 /* GithubSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857A3EF2645A11300E45AB7 /* GithubSearchService.swift */; };
+		B860B35D2646D20100F6D75C /* GithubLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B860B35C2646D20100F6D75C /* GithubLanguageViewModel.swift */; };
+		B860B3732646D5F200F6D75C /* HealthMailSearchHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B860B3722646D5F200F6D75C /* HealthMailSearchHeader.swift */; };
 		B8E68B1D2633273A008C4E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68B1C2633273A008C4E2B /* AppDelegate.swift */; };
 		B8E68B242633273A008C4E2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E68B222633273A008C4E2B /* Main.storyboard */; };
 		B8E68B262633273B008C4E2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8E68B252633273B008C4E2B /* Assets.xcassets */; };
@@ -36,7 +39,6 @@
 		B8E68BA526332EB0008C4E2B /* CellEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68B9126332EB0008C4E2B /* CellEx.swift */; };
 		B8E68BA626332EB0008C4E2B /* UIButtonEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68B9226332EB0008C4E2B /* UIButtonEx.swift */; };
 		B8E68BA926332F3C008C4E2B /* MKPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E68BA826332F3C008C4E2B /* MKPageViewController.swift */; };
-		E2002386264528E600471BC5 /* GithubLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2002385264528E600471BC5 /* GithubLanguageViewModel.swift */; };
 		E253B23A2638EDB700E4D3E9 /* RxBagController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B2382638EDB700E4D3E9 /* RxBagController.swift */; };
 		E253B23B2638EDB700E4D3E9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B2392638EDB700E4D3E9 /* HomeViewController.swift */; };
 		E253B23F2638EDCD00E4D3E9 /* SimpleValidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B23C2638EDCD00E4D3E9 /* SimpleValidController.swift */; };
@@ -58,7 +60,6 @@
 		E26299A1263A8008006837E6 /* BothwayOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26299A0263A8008006837E6 /* BothwayOperator.swift */; };
 		E263F4FC2646A0E800767B06 /* HealthMailSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263F4F82646A0E800767B06 /* HealthMailSearchViewModel.swift */; };
 		E263F4FD2646A0E800767B06 /* HealthMailSearchViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263F4F92646A0E800767B06 /* HealthMailSearchViews.swift */; };
-		E263F4FE2646A0E800767B06 /* BothwayOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263F4FA2646A0E800767B06 /* BothwayOperator.swift */; };
 		E263F4FF2646A0E800767B06 /* HealthMailSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263F4FB2646A0E800767B06 /* HealthMailSearchController.swift */; };
 		E26D94C826369B31007517CA /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D94C726369B31007517CA /* ActivityIndicator.swift */; };
 		E29486862635727E000DE498 /* RxNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29486822635679B000DE498 /* RxNotes.swift */; };
@@ -87,9 +88,12 @@
 		71EF8CC10813A69396D680EC /* Pods_RxDemos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDemos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A57BE4E742758D51A4F6F12 /* Pods-RxNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxNotes.debug.xcconfig"; path = "Target Support Files/Pods-RxNotes/Pods-RxNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		B80AC71C2638596200D756C3 /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
+		B81AF7942646F1B800868735 /* HealthMailSearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthMailSearchResultController.swift; sourceTree = "<group>"; };
 		B84F4C232637191D00C66818 /* DriverGithubSignController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverGithubSignController.swift; sourceTree = "<group>"; };
 		B857A3DC26459CAA00E45AB7 /* GithubSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSearchController.swift; sourceTree = "<group>"; };
 		B857A3EF2645A11300E45AB7 /* GithubSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSearchService.swift; sourceTree = "<group>"; };
+		B860B35C2646D20100F6D75C /* GithubLanguageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubLanguageViewModel.swift; sourceTree = "<group>"; };
+		B860B3722646D5F200F6D75C /* HealthMailSearchHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthMailSearchHeader.swift; sourceTree = "<group>"; };
 		B8E68B192633273A008C4E2B /* RxDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E68B1C2633273A008C4E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8E68B232633273A008C4E2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,7 +142,6 @@
 		E26299A0263A8008006837E6 /* BothwayOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BothwayOperator.swift; sourceTree = "<group>"; };
 		E263F4F82646A0E800767B06 /* HealthMailSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthMailSearchViewModel.swift; sourceTree = "<group>"; };
 		E263F4F92646A0E800767B06 /* HealthMailSearchViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthMailSearchViews.swift; sourceTree = "<group>"; };
-		E263F4FA2646A0E800767B06 /* BothwayOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BothwayOperator.swift; sourceTree = "<group>"; };
 		E263F4FB2646A0E800767B06 /* HealthMailSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthMailSearchController.swift; sourceTree = "<group>"; };
 		E26D94C726369B31007517CA /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		E29486822635679B000DE498 /* RxNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNotes.swift; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 				B8E68B252633273B008C4E2B /* Assets.xcassets */,
 				E2A9FE7D26357604009A3796 /* DirverObservableController.swift */,
 				B857A3DC26459CAA00E45AB7 /* GithubSearchController.swift */,
+				B860B35C2646D20100F6D75C /* GithubLanguageViewModel.swift */,
 				B857A3EF2645A11300E45AB7 /* GithubSearchService.swift */,
 				B8E68B272633273B008C4E2B /* LaunchScreen.storyboard */,
 				B8E68B222633273A008C4E2B /* Main.storyboard */,
@@ -341,10 +345,11 @@
 		E263F4F72646A0E800767B06 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				E263F4F82646A0E800767B06 /* HealthMailSearchViewModel.swift */,
-				E263F4F92646A0E800767B06 /* HealthMailSearchViews.swift */,
-				E263F4FA2646A0E800767B06 /* BothwayOperator.swift */,
 				E263F4FB2646A0E800767B06 /* HealthMailSearchController.swift */,
+				E263F4F82646A0E800767B06 /* HealthMailSearchViewModel.swift */,
+				B81AF7942646F1B800868735 /* HealthMailSearchResultController.swift */,
+				E263F4F92646A0E800767B06 /* HealthMailSearchViews.swift */,
+				B860B3722646D5F200F6D75C /* HealthMailSearchHeader.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -562,6 +567,7 @@
 				E253B24C2638EE2800E4D3E9 /* GithubSignController.swift in Sources */,
 				E2C0D4E126438EEC005BE709 /* RxUIApplicationDelegateProxy.swift in Sources */,
 				B8E68B9626332EB0008C4E2B /* MKScrollController.swift in Sources */,
+				B81AF7952646F1B800868735 /* HealthMailSearchResultController.swift in Sources */,
 				E2629991263A5884006837E6 /* RxProxyRegister.swift in Sources */,
 				E2AFA68B2644DEE000AF5B72 /* GithubTrendService.swift in Sources */,
 				E253B2542638EE6500E4D3E9 /* Wrieframe.swift in Sources */,
@@ -572,6 +578,7 @@
 				E26D94C826369B31007517CA /* ActivityIndicator.swift in Sources */,
 				E2C0D4ED2643EC6F005BE709 /* AddingNumberController.swift in Sources */,
 				B8E68B9F26332EB0008C4E2B /* QuickInitEx.swift in Sources */,
+				B860B35D2646D20100F6D75C /* GithubLanguageViewModel.swift in Sources */,
 				E253B23F2638EDCD00E4D3E9 /* SimpleValidController.swift in Sources */,
 				B857A3DD26459CAA00E45AB7 /* GithubSearchController.swift in Sources */,
 				B8E68BA126332EB0008C4E2B /* DateEx.swift in Sources */,
@@ -582,6 +589,7 @@
 				B8E68B9526332EB0008C4E2B /* MKAuthCodeView.swift in Sources */,
 				B8E68B9D26332EB0008C4E2B /* MKTimer.swift in Sources */,
 				B8E68BA226332EB0008C4E2B /* UIColorEx.swift in Sources */,
+				B860B3732646D5F200F6D75C /* HealthMailSearchHeader.swift in Sources */,
 				E253B2402638EDCD00E4D3E9 /* SimpleValidationController.swift in Sources */,
 				E2AFA69526451EAD00AF5B72 /* GithubTrendViewModel.swift in Sources */,
 				B8E68BA426332EB0008C4E2B /* StringEx.swift in Sources */,
@@ -595,7 +603,6 @@
 				B8E68B9926332EB0008C4E2B /* MKPickerController.swift in Sources */,
 				E253B2482638EE2800E4D3E9 /* MVVMGithubSignController.swift in Sources */,
 				B8E68B9B26332EB0008C4E2B /* MKBasePopController.swift in Sources */,
-				E2002386264528E600471BC5 /* GithubLanguageViewModel.swift in Sources */,
 				B8E68B9A26332EB0008C4E2B /* MKPopViewController.swift in Sources */,
 				E2C0D4DF26438995005BE709 /* RxImagePickerDelegateProxy.swift in Sources */,
 				B8E68BA026332EB0008C4E2B /* UIViewEx.swift in Sources */,
@@ -613,7 +620,6 @@
 				E2C0D4E42643924A005BE709 /* UIApplication+Reactive.swift in Sources */,
 				E2AFA6872644DE8000AF5B72 /* MVCTrendController.swift in Sources */,
 				E2629996263A78AA006837E6 /* APIWrapperController.swift in Sources */,
-				E263F4FE2646A0E800767B06 /* BothwayOperator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
