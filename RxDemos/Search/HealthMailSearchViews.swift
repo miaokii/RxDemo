@@ -32,6 +32,7 @@ struct MailSearchSection: AnimatableSectionModelType {
     }
 }
 
+/// 搜索标题
 class MailSearchHeader: UICollectionReusableView {
     private var titleLabel: UILabel!
     private lazy var deleBtn: UIButton = {
@@ -40,6 +41,7 @@ class MailSearchHeader: UICollectionReusableView {
         btn.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.right.equalTo(-20)
+            make.size.equalTo(40)
         }
         return btn
     }()
@@ -63,6 +65,7 @@ class MailSearchHeader: UICollectionReusableView {
                     delete()
                 }).disposed(by: rx.disposeBag)
         }
+        deleBtn.isHidden = deleteHandle == nil
         titleLabel.text = title
     }
     

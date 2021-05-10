@@ -652,6 +652,26 @@ extension RxBag {
     }
 }
 
+// MARK: - 连接
+extension RxBag {
+    /// 共享序列，并缓存最新的n个元素，当新的观察者订阅序列时，发送缓存的元素给新的观察者
+    func shareReplay() {
+        Observable<[String]>.empty()
+        let stream = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
+//            .share(replay: 2, scope: .forever)
+        
+        stream
+            .subscribe(onNext: { print("Subscribe1：\($0)") })
+            .disposed(by: bag)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+            stream
+                .subscribe(onNext: { print("Subscribe2：\($0)") })
+                .disposed(by: self.bag)
+        }
+    }
+}
+
 // MARK: - 调用
 extension RxBag {
 
@@ -707,6 +727,6 @@ extension RxBag {
     }
     
     static func Call() {
-        share.just()
+        share.shareReplay()
     }
 }

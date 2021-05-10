@@ -19,6 +19,7 @@ struct HomeViewModel {
         RouteModel.init(name: "Github search", controllerType: GithubSearchController.self),
         .init(name: "Search", controllerType: HealthMailSearchController.self)
     ])
+//    let data = Observable<[RouteModel]>.empty()
 }
 
 struct RouteModel {
@@ -41,6 +42,5 @@ class HomeViewController: RxBagController{
             let vc = model.controllerType.init()
             self.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: bag)
-    
     }
 }

@@ -17,21 +17,22 @@ fileprivate let mailSearchHistoryPath = SandboxManager.searchHistoryPath() + "/m
 class HealthMailSearchViewModel {
     // MARK: - input
     /// 删除所有历史搜索记录
-    let removeAllSearchHistory: AnyObserver<Void>
+//    let removeAllSearchHistory: AnyObserver<Void>
     /// 插入一条搜索关键字
     let newSearchKey: AnyObserver<String>
     /// 实时搜索
     let editSearchKey: AnyObserver<String>
     
     // MARK: - output
-    /// 热门搜索记录
-    let hotSearch: Observable<[String]>
     /// 数据源
     let sections: Observable<[MailSearchSection]>
-    /// 是否显示搜索结果
-    let showEditSearchResult = BehaviorRelay<Bool>.init(value: false)
     /// 实时搜索结果
     let editSearchResult: Observable<[String]>
+    
+    /// 搜索发现数据源
+    private var searchKeySource: BehaviorSubject<[String]>
+    /// 搜索发现数据源
+    private var hotSearch: BehaviorSubject<[String]>
     
     private var keys = [String]()
     private var bag = DisposeBag.init()
@@ -42,14 +43,13 @@ class HealthMailSearchViewModel {
             keys = NSArray(contentsOfFile: mailSearchHistoryPath) as? [String] ?? []
         }
         
-        let _removeAllSearchHistory = PublishSubject<Void>.init()
-        removeAllSearchHistory = _removeAllSearchHistory.asObserver()
+//        let _removeAllSearchHistory = PublishSubject<Void>.init()
+//        removeAllSearchHistory = _removeAllSearchHistory.asObserver()
         
-        let _searchKeySource = BehaviorRelay<[String]>.init(value: keys)
+        searchKeySource = BehaviorSubject<[String]>.init(value: keys)
+        hotSearch = BehaviorSubject<[String]>.init(value: [])
         
-        hotSearch = Observable.just(["落花", "香蕉", "特斯拉"])
-        
-        sections = Observable.combineLatest(_searchKeySource, hotSearch) { (his: $0, hot: $1) }
+        sections = Observable.combineLatest(searchKeySource, hotSearch) { (his: $0, hot: $1) }
             .map{ pair in
                 [MailSearchSection.init(header: "搜索记录", items: pair.his),
                  MailSearchSection.init(header: "搜索发现", items: pair.hot)]
@@ -66,15 +66,11 @@ class HealthMailSearchViewModel {
             })
             .asObservable()
         
-        editSearchResult
-            .map{ !$0.isEmpty }
-            .bind(to: showEditSearchResult)
-            .disposed(by: bag)
-        
         let _newSearchKey = PublishSubject<String>.init()
         newSearchKey = _newSearchKey.asObserver()
-        
+    
         _newSearchKey
+            .filter{$0.count > 0}
             .map({ [weak self] key -> [String] in
                 guard let this = self else { return [] }
                 if let i = this.keys.firstIndex(of: key) {
@@ -82,13 +78,20 @@ class HealthMailSearchViewModel {
                 }
                 this.keys.insert(key, at: 0)
                 (this.keys as NSArray).write(toFile: mailSearchHistoryPath, atomically: true)
-                _searchKeySource.accept(this.keys)
                 return this.keys
             })
-            .bind(to: _searchKeySource)
+            .bind(to: searchKeySource)
             .disposed(by: bag)
         
-            
+        DispatchQueue.main.async {
+            self.hotSearch.onNext(["康养包", "电影消费券", "钢铁侠", "日照香炉生紫烟", "♨️"])
+        }
+    }
+    
+    func removeAllSearchHistory() {
+        keys.removeAll()
+        (keys as NSArray).write(toFile: mailSearchHistoryPath, atomically: true)
+        searchKeySource.onNext([])
     }
 }
 

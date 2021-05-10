@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-fileprivate class SearchView: UIView {
+class SearchView: UIView {
     override var intrinsicContentSize: CGSize {
         return UIView.layoutFittingExpandedSize
     }
@@ -54,6 +54,7 @@ class HealthMailSearchController: RxViewController {
             make.left.equalTo(10)
             make.right.equalTo(-5)
         }
+        searchField.delegate = self
         searchField.leftView = searchIconView
         searchField.leftViewMode = .always
         searchField.clearsOnBeginEditing = true
@@ -89,50 +90,34 @@ class HealthMailSearchController: RxViewController {
             }
         } configureSupplementaryView: { datas, coll, title, indexPath in
             let sectionHeader = coll.dequeueHeaderView(type: MailSearchHeader.self, at: indexPath)
-            sectionHeader.set(title: datas.sectionModels[indexPath.section].header, deleteHandle: indexPath.section == 0 ? {
-                print("删除所有搜索记录")
+            sectionHeader.set(title: datas.sectionModels[indexPath.section].header, deleteHandle: indexPath.section == 0 ? { [weak self] in
+                self?.viewModel.removeAllSearchHistory()
             } : nil)
             return sectionHeader
         }
+        
+        /// 布局代理
+        collectionView.rx.setDelegate(self)
+            .disposed(by: rx.disposeBag)
+        
+        /// 选中一个历史搜索或者热点搜索
+        collectionView.rx.modelSelected(String.self)
+            .do(onNext: { [weak self] key in
+                self?.searchEndEdit(key: key)
+            })
+            .bind(to: viewModel.newSearchKey)
+            .disposed(by: rx.disposeBag)
 
+        /// 数据源
         viewModel.sections
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: rx.disposeBag)
         
-        viewModel.showEditSearchResult
-            .map{!$0}
-            .bind(to: tableView.rx.isHidden)
-            .disposed(by: rx.disposeBag)
-        
+        /// 搜索关键字结果
         viewModel.editSearchResult
             .subscribe(onNext: { result in
                 print(result)
             })
-            .disposed(by: rx.disposeBag)
-        
-        collectionView.rx.setDelegate(self)
-            .disposed(by: rx.disposeBag)
-        
-        collectionView.rx.modelSelected(String.self)
-            .bind(to: viewModel.newSearchKey)
-            .disposed(by: rx.disposeBag)
-        
-        searchField.rx.controlEvent(.editingDidEnd)
-            .map{[weak self] in self?.searchField.text ?? ""}
-            .filter{$0.count > 0}
-            .bind(to: viewModel.newSearchKey)
-            .disposed(by: rx.disposeBag)
-        
-        let searchKey = BehaviorRelay<String>.init(value: "")
-        // 双向绑定中过滤掉了待确认的输入
-        searchField.rx.textInput <=> searchKey
-        
-        searchKey
-            .bind(to: viewModel.editSearchKey)
-            .disposed(by: rx.disposeBag)
-        
-        searchBtn.rx.tap
-            .subscribe(onNext: { [weak self] in self?.searchEndEdit()})
             .disposed(by: rx.disposeBag)
         
         viewModel.editSearchResult
@@ -141,20 +126,57 @@ class HealthMailSearchController: RxViewController {
             }
             .disposed(by: rx.disposeBag)
         
-//        tableView.rx.modelSelected(String.self)
-//            .do()
-//            .map({_ in})
-//            .subscribe(onNext: { [weak self] in self?.searchEndEdit()})
-//            .disposed(by: rx.disposeBag)
+        /// 关键字搜索为空时，隐藏关键字结果
+        viewModel.editSearchResult
+            .map{ $0.isEmpty }
+            .bind(to: tableView.rx.isHidden)
+            .disposed(by: rx.disposeBag)
+        
+        let searchKey = BehaviorRelay<String>.init(value: "")
+        /// 双向绑定中过滤掉了待确认的输入
+        searchField.rx.textInput <=> searchKey
+        
+        /// 当搜索编辑时容时，更改搜索建议
+        searchKey
+            .bind(to: viewModel.editSearchKey)
+            .disposed(by: rx.disposeBag)
+        
+        /// 输入内容才可以编辑
+        searchKey
+            .map{!$0.isEmpty}
+            .bind(to: searchBtn.rx.isEnabled)
+            .disposed(by: bag)
+        
+        searchBtn.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.searchEndEdit(key: self?.searchField.text ?? "")
+            })
+            .disposed(by: rx.disposeBag)
         
         tableView.rx.modelSelected(String.self)
-            .bind(to: viewModel.newSearchKey)
+            .subscribe(onNext: { [weak self] key in
+                self?.searchEndEdit(key: key)
+            })
             .disposed(by: rx.disposeBag)
     }
     
-    private func searchEndEdit() {
-        searchField.text = ""
-        searchField.resignFirstResponder()
+    /// 保存搜索记录，请求搜索结果页面
+    private func searchEndEdit(key: String) {
+        
+        if searchField.isEditing {
+            searchField.text = ""
+            searchField.resignFirstResponder()
+        }
+        
+        guard key.count > 0 else {
+            return
+        }
+        let vc = HealthMailSearchResultController.init()
+        vc.searchKey = key
+        navigationController?.pushViewController(vc, animated: true)
+        
+        viewModel.newSearchKey
+            .onNext(key)
     }
 }
 
@@ -176,5 +198,12 @@ extension HealthMailSearchController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 10, left: 20, bottom: 10, right: 20)
+    }
+}
+
+extension HealthMailSearchController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchEndEdit(key: textField.text ?? "")
+        return true
     }
 }
