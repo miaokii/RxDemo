@@ -43,9 +43,6 @@ class HealthMailSearchViewModel {
             keys = NSArray(contentsOfFile: mailSearchHistoryPath) as? [String] ?? []
         }
         
-//        let _removeAllSearchHistory = PublishSubject<Void>.init()
-//        removeAllSearchHistory = _removeAllSearchHistory.asObserver()
-        
         searchKeySource = BehaviorSubject<[String]>.init(value: keys)
         hotSearch = BehaviorSubject<[String]>.init(value: [])
         
@@ -60,11 +57,11 @@ class HealthMailSearchViewModel {
         
         editSearchResult = _editSearchKey
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
-            .debug()
             .flatMapLatest({ key -> Observable<[String]> in
                 key.isEmpty ? .just([]) : fetchAutoCompleteItems(key)
             })
             .asObservable()
+            .share(replay: 1)
         
         let _newSearchKey = PublishSubject<String>.init()
         newSearchKey = _newSearchKey.asObserver()
